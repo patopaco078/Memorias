@@ -513,6 +513,7 @@ GameObject:
   - component: {fileID: 741376978}
   - component: {fileID: 741376977}
   - component: {fileID: 741376976}
+  - component: {fileID: 741376980}
   m_Layer: 0
   m_Name: Box
   m_TagString: Untagged
@@ -596,6 +597,19 @@ Transform:
   m_Father: {fileID: 2076770560}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &741376980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 741376975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce6509c88d468d245b7ec875baad3e98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MainTexture: {fileID: 2800000, guid: ce87e53873c191f44884dfd371986d8f, type: 3}
 --- !u!1 &812989851
 GameObject:
   m_ObjectHideFlags: 0

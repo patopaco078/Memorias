@@ -1,18 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+//BY: ALEJO LOPEZ
 
 public class ChangeTexture : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    [SerializeField] Texture m_MainTexture;
+    Renderer m_Renderer;
+    private void Awake() {
+        m_Renderer = GetComponent<Renderer>();
     }
-
-    // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.C)) {
+            m_Renderer.material.SetTexture("_MainTex", m_MainTexture);
+        }
     }
 }
