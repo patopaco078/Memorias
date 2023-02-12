@@ -32,11 +32,11 @@ public class ChangeTexture : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit(Collider other) {
+   /* private void OnTriggerExit(Collider other) {
         if (other.CompareTag("Player")) { //Se regresan las texturas originales a cada G.O.
             for(int i = 0; i < m_OtherTexture.Length; i++) {
                 m_Renderer[i].material.SetTexture("_MainTex", m_OriginalTexture[i]);
             }
         }
-    }
+    }*/
 }
