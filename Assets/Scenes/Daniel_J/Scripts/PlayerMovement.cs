@@ -1,9 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
-public class PlayerMovemento : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
+
+
+    private static PlayerMovement _instance;
+    public static PlayerMovement Instance { get { return _instance; } }
+
+
     [Header("Movement")]
     public float moveSpeed;
 
@@ -19,14 +26,30 @@ public class PlayerMovemento : MonoBehaviour
     float horizontalInput;
     float verticalInput;
 
+    public bool canMove = true;
     Vector3 moveDirection;
 
     Rigidbody rb;
 
+
+    private void Awake()
+    {
+        if (_instance != null && _instance != this)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            _instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+    }
     private void Start()
     {
         rb= GetComponent<Rigidbody>();
         rb.freezeRotation= true;
+
+       
     }
 
     private void Update()
@@ -50,15 +73,24 @@ public class PlayerMovemento : MonoBehaviour
 
     private void MyInput()
     {
-        horizontalInput = Input.GetAxisRaw("Horizontal");
-        verticalInput = Input.GetAxisRaw("Vertical");
+       
+            horizontalInput = Input.GetAxisRaw("Horizontal");
+            verticalInput = Input.GetAxisRaw("Vertical");
+        
+
+       
     }
 
     private void MovePlayer()
     {
-        moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
+        if (canMove)
+        {
+            moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
 
-        rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
+            rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
+        }
+
+       
     }
 
     private void SpeedControl()
@@ -72,4 +104,6 @@ public class PlayerMovemento : MonoBehaviour
         }
     }
 
+   
+    
 }
