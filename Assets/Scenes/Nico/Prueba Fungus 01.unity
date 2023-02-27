@@ -420,7 +420,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &587298234
 GameObject:
@@ -1152,7 +1152,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 2
   indentLevel: 0
-  storyText: "Como pueden ver, podemos avanzar en la conversaci\xF3n sin probelmas"
+  storyText: "\xBFQu\xE9 tal si llamamos al sol?\n{punch=10,0.5}\xA1\xA1Sooool!!!{punch=10,0.5}."
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -1223,18 +1223,19 @@ MonoBehaviour:
     serializedVersion: 2
     x: 67
     y: 70
-    width: 111.17646
+    width: 117.333336
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
   itemId: 0
-  blockName: New Block
+  blockName: IntroPrueba
   description: 
   eventHandler: {fileID: 1198309517}
   commandList:
   - {fileID: 1198309516}
   - {fileID: 1198309515}
   - {fileID: 1198309521}
+  - {fileID: 1198309522}
   suppressAllAutoSelections: 0
 --- !u!114 &1198309519
 MonoBehaviour:
@@ -1249,11 +1250,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 20.658287, y: 21.364187}
+  scrollPos: {x: 152.45099, y: 77.83333}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 400
-  zoom: 0.85000014
+  zoom: 1
   scrollViewRect:
     serializedVersion: 2
     x: -343
@@ -1261,8 +1262,9 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
+  - {fileID: 1198309518}
+  selectedCommands:
   - {fileID: 1198309522}
-  selectedCommands: []
   variables: []
   description: 
   stepPause: 0
@@ -1317,30 +1319,34 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &1198309522
 MonoBehaviour:
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1198309514}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+  m_Script: {fileID: 11500000, guid: 3ac5ce55bc698fa4290939ef6e426501, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nodeRect:
-    serializedVersion: 2
-    x: 245.22406
-    y: 68.04759
-    width: 117.450966
-    height: 40
-  tint: {r: 1, g: 1, b: 1, a: 1}
-  useCustomTint: 0
   itemId: 4
-  blockName: New Block1
-  description: 
-  eventHandler: {fileID: 0}
-  commandList: []
-  suppressAllAutoSelections: 0
+  indentLevel: 0
+  display: 1
+  stage: {fileID: 0}
+  character: {fileID: 1857986608}
+  replacedCharacter: {fileID: 0}
+  portrait: {fileID: 0}
+  offset: 0
+  fromPosition: {fileID: 0}
+  toPosition: {fileID: 0}
+  facing: 0
+  useDefaultSettings: 1
+  fadeDuration: 0.5
+  moveDuration: 1
+  shiftOffset: {x: 0, y: 0}
+  move: 0
+  shiftIntoPlace: 0
+  waitUntilFinished: 0
 --- !u!1 &1641491527
 GameObject:
   m_ObjectHideFlags: 0
@@ -1431,7 +1437,7 @@ GameObject:
   - component: {fileID: 1857986609}
   - component: {fileID: 1857986608}
   m_Layer: 0
-  m_Name: Character
+  m_Name: Sol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1453,7 +1459,7 @@ MonoBehaviour:
   nameColor: {r: 0.9150943, g: 0.5985928, b: 0.17841454, a: 1}
   soundEffect: {fileID: 0}
   portraits:
-  - {fileID: 0}
+  - {fileID: 21300000, guid: 6a8b5e1b9e32ffa48b06135dc08e6124, type: 3}
   portraitsFace: 0
   setSayDialog: {fileID: 0}
   description: 
@@ -1469,7 +1475,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2125736977
 GameObject:
