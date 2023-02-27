@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Bello/Scenes/MenuInicial.unity
+    guid: d1467929343cba24388fb4f5e81bd733
+  - enabled: 1
+    path: Assets/Scenes/Bello/Scenes/Testeo.unity
+    guid: ec3ee783e529e574eaa82cc54fb70765
   m_configObjects: {}
