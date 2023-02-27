@@ -27,7 +27,7 @@ public class ChangeTexture : MonoBehaviour
     private void OnTriggerEnter(Collider other) {
         if (other.CompareTag("Player")) { //Se cambian las texturas originales por las puestas en el inspector
             for (int i = 0; i < m_OtherTexture.Length; i++) {
-                m_Renderer[i].material.SetTexture("_MainTex", m_OtherTexture[i]);//API Unity: SetTexture
+                m_Renderer[i].material.SetTexture("_BaseMap", m_OtherTexture[i]);//API Unity: SetTexture
             }
         }
     }
