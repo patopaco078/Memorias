@@ -6398,6 +6398,7 @@ MonoBehaviour:
   cam: {fileID: 1779240753}
   PositionArcoToCamera: 0.08
   positiony: 0.21
+  speed: 0
 --- !u!65 &1594238595
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11374,6 +11375,7 @@ GameObject:
   - component: {fileID: 1779240753}
   - component: {fileID: 1779240752}
   - component: {fileID: 1779240751}
+  - component: {fileID: 1779240754}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -11480,6 +11482,19 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &1779240754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1779240749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a34697fc2c51e4aaef30e7c1c0b821, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FPS: 30
 --- !u!1 &1830237037
 GameObject:
   m_ObjectHideFlags: 0

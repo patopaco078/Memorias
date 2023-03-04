@@ -14,8 +14,8 @@ public class MousePositionArco : MonoBehaviour
 
     private void Update()
     {
-        speed = (cam.ScreenToViewportPoint(Input.mousePosition).x - lastPosition) / Time.deltaTime;
-        lastPosition = cam.ScreenToViewportPoint(Input.mousePosition).x;
+        speed = (transform.localPosition.x - lastPosition) / Time.deltaTime;
+        lastPosition = transform.localPosition.x;
 
         transform.localPosition = new Vector3((-1)*cam.ScreenToViewportPoint(Input.mousePosition).x, positiony, PositionArcoToCamera);
     }
