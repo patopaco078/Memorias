@@ -5,8 +5,14 @@ using UnityEngine.UI;
 
 public class Player_moverse : MonoBehaviour
 {
+    private static Player_moverse _instance; // Para poder acceder desde otro lado justo los del awake
+    public static Player_moverse Instance { get { return _instance; } }
+
     public float movementSpeed;
     public float movimientonormal;
+
+    private bool canPlayviolin = false;
+    public bool isPlaying = false;
 
     float horizontalInput;
     float verticalInput;
@@ -23,6 +29,15 @@ public class Player_moverse : MonoBehaviour
 
     private void Awake()
     {
+        if (_instance != null && _instance != this)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            _instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
         charController = GetComponent<CharacterController>();
         movementSpeed = movimientonormal;
     }
@@ -32,6 +47,10 @@ public class Player_moverse : MonoBehaviour
         MyInput();
         Mover();
         gravedad();
+        ActivateViolin();
+         
+
+
     }
 
     private void MyInput()
@@ -65,6 +84,8 @@ public class Player_moverse : MonoBehaviour
         }*/
     }
 
+
+
     void gravedad()
     {
         if (charController.isGrounded)
@@ -74,5 +95,53 @@ public class Player_moverse : MonoBehaviour
         vSpeed += gravity;
         speed.y = vSpeed;
         charController.Move(speed * Time.deltaTime);
+    }
+
+    public void StopMove()
+    {
+        
+        movementSpeed = 0;
+
+    }
+    public void MoveAgain()
+    {
+        movementSpeed = movimientonormal;
+    }
+
+   public void PlayViolin()
+   {
+        canPlayviolin= true;
+   }
+    private void ActivateViolin()
+    {
+        if (Input.GetKeyDown(KeyCode.Q)&& canPlayviolin && !isPlaying)
+        {
+            Debug.Log("Toco violin");
+            isPlaying = true;
+            StopMove();
+            PlayerLook.Instance.CantMoveCamera();
+            PlayerLook.Instance.Desbloqueamouse();
+
+        }
+        else if (Input.GetKeyDown(KeyCode.Q) && isPlaying)
+        {
+            Debug.Log("Ya no toco violin");
+            isPlaying = false;
+            MoveAgain();
+            PlayerLook.Instance.MoveAgain();
+            PlayerLook.Instance.Desbloqueamouse();
+        }
+
+    }
+    private void StopViolin()
+    {
+        if (Input.GetKeyDown(KeyCode.Q) && isPlaying)
+        {
+            isPlaying = false;
+            MoveAgain();
+            PlayerLook.Instance.MoveAgain();
+        }
+
+             
     }
 }

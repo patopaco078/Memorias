@@ -41,8 +41,8 @@ public class Nota_Intecartuable : Interactable
 
         if (isInspecting)
         {
-            Player_Cam.Instance.canMove= false;
-            PlayerMovement.Instance.canMove= false;
+            PlayerLook.Instance.CantMoveCamera();
+            Player_moverse.Instance.StopMove();
 
             // Move object towards camera
             float distance = Mathf.Lerp(Vector3.Distance(transform.position, Camera.main.transform.position), 0, Time.deltaTime * moveSpeed);
@@ -66,8 +66,8 @@ public class Nota_Intecartuable : Interactable
                 transform.rotation = originalRotation;
                 mesh.enabled = true;
 
-                Player_Cam.Instance.canMove = true;
-                PlayerMovement.Instance.canMove = true;
+                PlayerLook.Instance.MoveAgain();
+                Player_moverse.Instance.MoveAgain();
             }
         }
 
