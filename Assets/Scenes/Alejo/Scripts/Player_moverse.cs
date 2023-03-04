@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+//By: Alejo López
 
 public class Player_moverse : MonoBehaviour
 {
@@ -25,47 +26,32 @@ public class Player_moverse : MonoBehaviour
     {
         charController = GetComponent<CharacterController>();
         movementSpeed = movimientonormal;
+        _audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
     {
         MyInput();
         Mover();
-        gravedad();
+        Gravedad();
+        WalkingAnimation();
+        
     }
 
     private void MyInput()
     {
-        horizontalInput = Input.GetAxisRaw("Horizontal");
-        verticalInput = Input.GetAxisRaw("Vertical");
+        horizontalInput = Input.GetAxis("Horizontal");
+        verticalInput = Input.GetAxis("Vertical");
     }
 
     public void Mover()
     {
-        Vector3 forwardSpeed = transform.forward * Input.GetAxis("Vertical") * movementSpeed;
-        Vector3 rightSpeed = transform.right * Input.GetAxis("Horizontal") * movementSpeed;
+        Vector3 forwardSpeed = transform.forward * verticalInput * movementSpeed;
+        Vector3 rightSpeed = transform.right * horizontalInput * movementSpeed;
         speed = forwardSpeed + rightSpeed;
-
-        //****Se activan y desactivan las animaciones de Caminar**** Add by Alejo
-        /*
-        if (horizontalInput != 0 || verticalInput != 0)
-        {
-            walkingAnim.SetBool("isMoving", true);
-            if (controlPlayAudio == 0)
-            {
-                _audioSource.Play();
-                controlPlayAudio++;
-            }
-        }
-        else
-        {
-            walkingAnim.SetBool("isMoving", false);
-            _audioSource.Pause();
-            controlPlayAudio = 0;
-        }*/
     }
 
-    void gravedad()
+    void Gravedad()
     {
         if (charController.isGrounded)
         {
@@ -74,5 +60,25 @@ public class Player_moverse : MonoBehaviour
         vSpeed += gravity;
         speed.y = vSpeed;
         charController.Move(speed * Time.deltaTime);
+    }
+
+    void WalkingAnimation() //****Se activan y desactivan las animaciones de Caminar**** Add by Alejo
+    { 
+        
+       if (horizontalInput != 0 || verticalInput != 0)
+       {
+           walkingAnim.SetBool("isMoving", true);
+           if (controlPlayAudio == 0)
+           {
+               _audioSource.Play();
+               controlPlayAudio++;
+           }
+       }
+       else
+       {
+           walkingAnim.SetBool("isMoving", false);
+           _audioSource.Pause();
+           controlPlayAudio = 0;
+       }
     }
 }
