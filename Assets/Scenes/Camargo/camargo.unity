@@ -6045,7 +6045,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: ca5e4a77c8f01d94f9f6bc34dc0d2a2a, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -6142,6 +6142,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1059229746836548a5bac6b6a5ee069, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MPA: {fileID: 1594238594}
   Moments:
   - FinishTime: 3
     speed: 0
@@ -6152,6 +6153,8 @@ MonoBehaviour:
   - FinishTime: 0
     speed: 0
     ErrorRange: 0
+  isPlaying: 0
+  isLeft: 0
 --- !u!1 &1470824111
 GameObject:
   m_ObjectHideFlags: 0
@@ -6399,6 +6402,7 @@ MonoBehaviour:
   PositionArcoToCamera: 0.08
   positiony: 0.21
   speed: 0
+  TotalPromedioSpeeds: 20
 --- !u!65 &1594238595
 BoxCollider:
   m_ObjectHideFlags: 0
