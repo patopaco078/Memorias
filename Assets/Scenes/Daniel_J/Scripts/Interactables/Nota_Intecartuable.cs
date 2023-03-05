@@ -9,7 +9,8 @@ public class Nota_Intecartuable : Interactable
     public delegate void MiDelegado();
    
 
-    private bool isInspecting = false;
+    public bool isInspecting = false;
+    public float distanceEntre;
     private Vector3 originalPosition;
     private Quaternion originalRotation;
     public float moveSpeed = 3.0f;
@@ -17,6 +18,8 @@ public class Nota_Intecartuable : Interactable
     public float initialDistance=1;
     private MeshCollider mesh;
     private bool isRotating = false;
+    private float originalPositionY;
+    private int count = 1;
 
     // Start is called before the first frame update
     void Start()
@@ -41,13 +44,27 @@ public class Nota_Intecartuable : Interactable
 
         if (isInspecting)
         {
-            Player_Cam.Instance.canMove= false;
-            PlayerMovement.Instance.canMove= false;
-
+            PlayerLook.Instance.CantMoveCamera();
+            Player_moverse.Instance.StopMove();
+           
             // Move object towards camera
-            float distance = Mathf.Lerp(Vector3.Distance(transform.position, Camera.main.transform.position), 0, Time.deltaTime * moveSpeed);
-            transform.position = Camera.main.transform.position + Camera.main.transform.forward * (initialDistance );
+            float distance = Vector3.Distance(transform.position, Camera.main.transform.position);
+            float step = moveSpeed * Time.deltaTime;
+            Vector3 newPosition = Camera.main.transform.position + Camera.main.transform.forward * initialDistance;
+            newPosition.y = originalPositionY;
+            transform.position = Vector3.Lerp(transform.position, Camera.main.transform.position + Camera.main.transform.forward * initialDistance, step);
+            distanceEntre = Vector3.Distance(transform.position, Camera.main.transform.forward * initialDistance);
+
+            if (distanceEntre <= 7f && count>1) // Change 0.1f to desired threshold for inspection position
+            {
+                
+                    Invoke("StopSpeed", 2f);
+                    count--;
+              
+            }
+            ;
             // Rotate
+
             if (isRotating) // Si se ha hecho clic en el botón del mouse
             {
                 float rotateHorizontal = Input.GetAxis("Mouse X") * rotationSpeed;
@@ -65,9 +82,11 @@ public class Nota_Intecartuable : Interactable
                 transform.position = originalPosition;
                 transform.rotation = originalRotation;
                 mesh.enabled = true;
+                moveSpeed = 1f;
 
-                Player_Cam.Instance.canMove = true;
-                PlayerMovement.Instance.canMove = true;
+
+                PlayerLook.Instance.MoveAgain();
+                Player_moverse.Instance.MoveAgain();
             }
         }
 
@@ -81,6 +100,12 @@ public class Nota_Intecartuable : Interactable
         isInspecting = true;       
         originalPosition = transform.position;
         originalRotation = transform.rotation;
-        
+        originalPositionY = transform.position.y;
+        count++;
+
+    }
+    private void StopSpeed()
+    {
+        moveSpeed = 0f;
     }
 }

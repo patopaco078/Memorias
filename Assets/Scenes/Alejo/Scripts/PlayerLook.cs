@@ -4,13 +4,30 @@ using UnityEngine;
 
 public class PlayerLook : MonoBehaviour
 {
+
+    private static PlayerLook _instance; // Para poder acceder desde otro lado junto lo del awake
+    public static PlayerLook Instance { get { return _instance; } }
+
     [SerializeField] float mouseSensitivity = 300f;
 
     [SerializeField] Transform playerBody;
 
     private float xAxisClamp;
+    private bool canMove = true;
+    public bool mouseview = false;
+
 
     private void Awake() {
+        if (_instance != null && _instance != this)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            _instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+
         LockCursor();
         xAxisClamp = 0.0f;
     }
@@ -18,35 +35,69 @@ public class PlayerLook : MonoBehaviour
 
     private void LockCursor() {
         Cursor.lockState = CursorLockMode.Locked;
+       
     }
 
     private void Update() {
         CameraRotation();
+        Cursor.visible = mouseview;
     }
 
     private void CameraRotation() {
-        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
-        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
 
-        xAxisClamp += mouseY;
+        if (canMove) //Daniel J, para poder bloquear la rotacion 
+        {
+            float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
+            float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
 
-        if (xAxisClamp > 90.0f) {
-            xAxisClamp = 90.0f;
-            mouseY = 0.0f;
-            ClampXAxisRotationToValue(270.0f);
-        } else if (xAxisClamp < -90.0f) {
-            xAxisClamp = -90.0f;
-            mouseY = 0.0f;
-            ClampXAxisRotationToValue(90.0f);
+            xAxisClamp += mouseY;
+
+            if (xAxisClamp > 90.0f)
+            {
+                xAxisClamp = 90.0f;
+                mouseY = 0.0f;
+                ClampXAxisRotationToValue(270.0f);
+            }
+            else if (xAxisClamp < -90.0f)
+            {
+                xAxisClamp = -90.0f;
+                mouseY = 0.0f;
+                ClampXAxisRotationToValue(90.0f);
+            }
+
+            transform.Rotate(Vector3.left * mouseY);
+            playerBody.Rotate(Vector3.up * mouseX);
         }
 
-        transform.Rotate(Vector3.left * mouseY);
-        playerBody.Rotate(Vector3.up * mouseX);
+       
     }
 
     private void ClampXAxisRotationToValue(float value) {
         Vector3 eulerRotation = transform.eulerAngles;
         eulerRotation.x = value;
         transform.eulerAngles = eulerRotation;
+    }
+
+    public void CantMoveCamera()
+    {
+        canMove = false;
+    }
+
+    public void MoveAgain()
+    {
+        canMove = true;
+    }
+    public void Desbloqueamouse()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        
+       
+    }
+    public void BloquearMouse()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+
+        
+
     }
 }
