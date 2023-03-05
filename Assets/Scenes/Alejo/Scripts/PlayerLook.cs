@@ -93,7 +93,8 @@ public class PlayerLook : MonoBehaviour
     }
     public void BloquearMouse()
     {
-        LockCursor();
+        Cursor.lockState = CursorLockMode.Locked;
+
         Cursor.visible = false;
 
     }
