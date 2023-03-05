@@ -14,6 +14,7 @@ public class PlayerLook : MonoBehaviour
 
     private float xAxisClamp;
     private bool canMove = true;
+    public bool mouseview = false;
 
 
     private void Awake() {
@@ -39,6 +40,7 @@ public class PlayerLook : MonoBehaviour
 
     private void Update() {
         CameraRotation();
+        Cursor.visible = mouseview;
     }
 
     private void CameraRotation() {
@@ -89,12 +91,13 @@ public class PlayerLook : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.None;
         
-        Cursor.visible = true;
+       
     }
     public void BloquearMouse()
     {
-        LockCursor();
-        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+
+        
 
     }
 }

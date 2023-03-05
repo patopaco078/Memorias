@@ -1000,6 +1000,10 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 13400000, guid: 1563ae5038e76e942bbf1a6e82190d21, type: 2}
+    - target: {fileID: 7257935825050240775, guid: a9562e10fc60fda46b56ceea6f7969e3, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7257935825050240824, guid: a9562e10fc60fda46b56ceea6f7969e3, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0
@@ -1091,6 +1095,10 @@ PrefabInstance:
     - target: {fileID: 7257935825787525664, guid: a9562e10fc60fda46b56ceea6f7969e3, type: 3}
       propertyPath: m_CollisionDetection
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7257935825787525666, guid: a9562e10fc60fda46b56ceea6f7969e3, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7257935825787525666, guid: a9562e10fc60fda46b56ceea6f7969e3, type: 3}
       propertyPath: moveSpeed
@@ -1661,11 +1669,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5223542749620622953, guid: cfe1652a98a09fe44bc4627563ac83aa, type: 3}
       propertyPath: moveSpeed
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5223542749620622953, guid: cfe1652a98a09fe44bc4627563ac83aa, type: 3}
       propertyPath: initialDistance
-      value: 0.7
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5223542749620622954, guid: cfe1652a98a09fe44bc4627563ac83aa, type: 3}
       propertyPath: m_Name

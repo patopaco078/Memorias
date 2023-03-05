@@ -121,6 +121,7 @@ public class Player_moverse : MonoBehaviour
             StopMove();
             PlayerLook.Instance.CantMoveCamera();
             PlayerLook.Instance.Desbloqueamouse();
+            PlayerLook.Instance.mouseview = true;
 
         }
         else if (Input.GetKeyDown(KeyCode.Q) && isPlaying)
@@ -130,6 +131,7 @@ public class Player_moverse : MonoBehaviour
             MoveAgain();
             PlayerLook.Instance.MoveAgain();
             PlayerLook.Instance.Desbloqueamouse();
+            PlayerLook.Instance.mouseview = false;
         }
 
     }
