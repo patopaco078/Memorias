@@ -52,14 +52,14 @@ public class MusicController : MonoBehaviour
             if (a)
             {
                 aS.Play();
-                Debug.Log("a");
+                //Debug.Log("a");
                 a = false;
             }
         }
 
         else
         {
-            Debug.Log("b");
+            //Debug.Log("b");
             aS.Pause();
             a = true;
         }

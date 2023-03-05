@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerLook : MonoBehaviour
 {
-
     private static PlayerLook _instance; // Para poder acceder desde otro lado junto lo del awake
     public static PlayerLook Instance { get { return _instance; } }
 
