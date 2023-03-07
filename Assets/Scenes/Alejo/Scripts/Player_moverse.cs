@@ -40,6 +40,7 @@ public class Player_moverse : MonoBehaviour
         }
         charController = GetComponent<CharacterController>();
         movementSpeed = movimientonormal;
+        _audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -48,7 +49,7 @@ public class Player_moverse : MonoBehaviour
         Mover();
         gravedad();
         ActivateViolin();
-         
+        WalkingAnimation();
 
 
     }
@@ -145,5 +146,25 @@ public class Player_moverse : MonoBehaviour
         }
 
              
+    }
+
+    void WalkingAnimation() //****Se activan y desactivan las animaciones de Caminar**** Add by Alejo
+    {
+
+        if (horizontalInput != 0 || verticalInput != 0)
+        {
+            walkingAnim.SetBool("isMoving", true);
+            if (controlPlayAudio == 0)
+            {
+                _audioSource.Play();
+                controlPlayAudio++;
+            }
+        }
+        else
+        {
+            walkingAnim.SetBool("isMoving", false);
+            _audioSource.Pause();
+            controlPlayAudio = 0;
+        }
     }
 }
