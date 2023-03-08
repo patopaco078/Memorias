@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Cajon : Interactable
+public class Cajon : Interactable  //Daniel Jaramillo Script de la interaccion para abrir cajones
 {
     private Animator anim;
     private bool isOpen = false;
