@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+//camargo
 
 public class MusicController : MonoBehaviour
 {
@@ -9,18 +10,35 @@ public class MusicController : MonoBehaviour
     int ActualClip = 0;
     private AudioSource aS;
     [SerializeField] private bool isPlaying = false;
+    private bool canUse = false;
 
     [SerializeField] bool isLeft;
     bool a = true;
 
+    public bool CanUse { get => canUse;}
+
     private void Start()
     {
         aS = gameObject.GetComponent<AudioSource>();
+
+        for(int i = 0; i < Moments.Length; i++)
+        {
+            Debug.Log(Moments[i].Speed);
+        }
     }
 
     private void Update()
     {
-        if(MPA.Speed > 0)
+        if (canUse)
+        {
+            detectSide();
+            PlayingClip();
+        }
+    }
+
+    private void detectSide()
+    {
+        if (MPA.Speed > 0)
         {
             isLeft = true;
         }
@@ -28,8 +46,6 @@ public class MusicController : MonoBehaviour
         {
             isLeft = false;
         }
-        PlayingClip();
-        
     }
 
     private void PlayingClip()
@@ -63,5 +79,14 @@ public class MusicController : MonoBehaviour
             aS.Pause();
             a = true;
         }
+
+        //-------------------------NEW CODE-------------------------
+
+
+    }
+
+    public void NowCanUseViolin()
+    {
+        canUse = true;
     }
 }

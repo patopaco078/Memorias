@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+//camargo
 
 public class ActivateViolín : MonoBehaviour
 {
+    [SerializeField] MusicController MusicController;
     [SerializeField] GameObject violin;
     bool isActivate = false;
     [SerializeField] bool a =true;
@@ -15,26 +17,29 @@ public class ActivateViolín : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (MusicController.CanUse)
         {
-            if (!isActivate && a)
+            if (Input.GetKeyDown(KeyCode.Q))
             {
-                Debug.Log("a");
-                violin.SetActive(true);
-                isActivate = true;
-                a = false;
+                if (!isActivate && a)
+                {
+                    Debug.Log("a");
+                    violin.SetActive(true);
+                    isActivate = true;
+                    a = false;
+                }
+                if (isActivate && a)
+                {
+                    violin.SetActive(false);
+                    isActivate = false;
+                    a = false;
+                }
             }
-            if (isActivate && a)
-            {
-                violin.SetActive(false);
-                isActivate = false;
-                a = false;
-            }
-        }
 
-        if (!a)
-        {
-            a = true;
+            if (!a)
+            {
+                a = true;
+            }
         }
     }
 }

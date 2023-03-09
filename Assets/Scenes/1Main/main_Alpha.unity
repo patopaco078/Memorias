@@ -654,6 +654,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 938768524}
     m_Modifications:
+    - target: {fileID: 1409600386, guid: 4f74aeefb7da65d4cad91effd89ff6ac, type: 3}
+      propertyPath: Moments.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1409600386, guid: 4f74aeefb7da65d4cad91effd89ff6ac, type: 3}
+      propertyPath: Moments.Array.data[1].FinishTime
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1409600386, guid: 4f74aeefb7da65d4cad91effd89ff6ac, type: 3}
+      propertyPath: Moments.Array.data[2].FinishTime
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1409600386, guid: 4f74aeefb7da65d4cad91effd89ff6ac, type: 3}
+      propertyPath: Moments.Array.data[0].DistanceOfArco
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1409600386, guid: 4f74aeefb7da65d4cad91effd89ff6ac, type: 3}
+      propertyPath: Moments.Array.data[1].DistanceOfArco
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1409600386, guid: 4f74aeefb7da65d4cad91effd89ff6ac, type: 3}
+      propertyPath: Moments.Array.data[2].DistanceOfArco
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1594238594, guid: 4f74aeefb7da65d4cad91effd89ff6ac, type: 3}
       propertyPath: cam
       value: 
@@ -708,6 +732,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f74aeefb7da65d4cad91effd89ff6ac, type: 3}
+--- !u!114 &725245465 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1409600386, guid: 4f74aeefb7da65d4cad91effd89ff6ac, type: 3}
+  m_PrefabInstance: {fileID: 725245462}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1059229746836548a5bac6b6a5ee069, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &831344352
 GameObject:
   m_ObjectHideFlags: 0
@@ -825,6 +860,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f5bf5c44c43d474494f0cf79547495c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MusicController: {fileID: 725245465}
   violin: {fileID: 1385510039}
   a: 1
 --- !u!4 &938768524 stripped
@@ -1227,6 +1263,34 @@ PrefabInstance:
       propertyPath: violinBoton
       value: 
       objectReference: {fileID: 1715731226}
+    - target: {fileID: 1689550194374381594, guid: f71828a96fe18e048bccbdf0425820f6, type: 3}
+      propertyPath: WhenActive.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1689550194374381594, guid: f71828a96fe18e048bccbdf0425820f6, type: 3}
+      propertyPath: WhenActive.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1689550194374381594, guid: f71828a96fe18e048bccbdf0425820f6, type: 3}
+      propertyPath: WhenActive.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 725245465}
+    - target: {fileID: 1689550194374381594, guid: f71828a96fe18e048bccbdf0425820f6, type: 3}
+      propertyPath: WhenActive.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1689550194374381594, guid: f71828a96fe18e048bccbdf0425820f6, type: 3}
+      propertyPath: WhenActive.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: NowCanUseViolin
+      objectReference: {fileID: 0}
+    - target: {fileID: 1689550194374381594, guid: f71828a96fe18e048bccbdf0425820f6, type: 3}
+      propertyPath: WhenActive.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MusicController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1689550194374381594, guid: f71828a96fe18e048bccbdf0425820f6, type: 3}
+      propertyPath: WhenActive.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 5223542749620622954, guid: f71828a96fe18e048bccbdf0425820f6, type: 3}
       propertyPath: m_Name
       value: Nota para violin
