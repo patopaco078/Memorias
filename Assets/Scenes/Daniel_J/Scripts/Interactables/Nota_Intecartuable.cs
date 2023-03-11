@@ -21,6 +21,9 @@ public class Nota_Intecartuable : Interactable
     private float originalPositionY;
     private int count = 1;
 
+    [SerializeField]
+    private UnityEvent activarObjetivo;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -83,7 +86,7 @@ public class Nota_Intecartuable : Interactable
                 transform.rotation = originalRotation;
                 mesh.enabled = true;
                 moveSpeed = 1f;
-
+                activarObjetivo.Invoke();
 
                 PlayerLook.Instance.MoveAgain();
                 Player_moverse.Instance.MoveAgain();
