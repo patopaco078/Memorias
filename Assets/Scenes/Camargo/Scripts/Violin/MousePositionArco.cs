@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//camargo
 public class MousePositionArco : MonoBehaviour
 {
     [SerializeField] Camera cam;
@@ -11,8 +11,10 @@ public class MousePositionArco : MonoBehaviour
     private List<float> speeds = new List<float>();
     private float lastPosition;
     [SerializeField] private int TotalPromedioSpeeds = 3;
+    [SerializeField] private bool isTouchViolin = false;
 
     public float Speed { get => speed;}
+    public bool IsTouchViolin { get => isTouchViolin;}
 
     private void Update()
     {
@@ -39,5 +41,16 @@ public class MousePositionArco : MonoBehaviour
             sumatoria += speeds[i];
         }
         return sumatoria / TotalPromedioSpeeds;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Violin")
+            isTouchViolin = true;
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Violin")
+            isTouchViolin = false;
     }
 }
