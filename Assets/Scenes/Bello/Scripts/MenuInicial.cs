@@ -7,7 +7,7 @@ public class MenuInicial : MonoBehaviour
 {
     public void Playgame()
     {
-        SceneManager.LoadScene("Testeo");
+        SceneManager.LoadScene("Cinematica");
 
     }
     public void Exitgame()
