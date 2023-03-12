@@ -3,10 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 //camargo
 
+[RequireComponent(typeof(Checking))]
+[RequireComponent(typeof(AudioSource))]
 public class MusicController : MonoBehaviour
 {
+    private Checking checkerCode;
+
     [SerializeField] MousePositionArco MPA;
-    [SerializeField] ClipMusic[] Moments;
+    [SerializeField] ClipMusic[] moments;
     int ActualClip = 0;
     private AudioSource aS;
     [SerializeField] private bool isPlaying = false;
@@ -16,15 +20,12 @@ public class MusicController : MonoBehaviour
     bool a = true;
 
     public bool CanUse { get => canUse;}
+    public ClipMusic[] Moments { get => moments; set => moments = value; }
 
     private void Start()
     {
         aS = gameObject.GetComponent<AudioSource>();
-
-        for(int i = 0; i < Moments.Length; i++)
-        {
-            Debug.Log(Moments[i].Speed);
-        }
+        checkerCode = gameObject.GetComponent<Checking>();
     }
 
     private void Update()
@@ -50,18 +51,19 @@ public class MusicController : MonoBehaviour
 
     private void PlayingClip()
     {
+        
         if (MPA.Speed != 0)
             isPlaying = true;
         else
             isPlaying = false;
-        /*
+        
         if (isPlaying)
         {
             if (isLeft)
             {
 
             }
-        }*/
+        }
 
         if (isPlaying)
         {
@@ -83,6 +85,16 @@ public class MusicController : MonoBehaviour
         //-------------------------NEW CODE-------------------------
 
 
+    }
+
+    private void startClip()
+    {
+        aS.Play();
+    }
+
+    private void stopClip()
+    {
+        aS.Pause();
     }
 
     public void NowCanUseViolin()
