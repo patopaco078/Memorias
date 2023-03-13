@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Bello/Scenes/MenuInicial.unity
     guid: d1467929343cba24388fb4f5e81bd733
   - enabled: 0
@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/1Main/main_Alpha.unity
     guid: e55f562ee5d3e484cb32d8cc3d3e7685
+  - enabled: 1
+    path: Assets/Scenes/Bello/Scenes/Cinematica.unity
+    guid: 5b3e707ab4e1a5c48b1bccd8a81534c7
   m_configObjects: {}
