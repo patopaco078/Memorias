@@ -746,6 +746,18 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1409600386, guid: 4f74aeefb7da65d4cad91effd89ff6ac, type: 3}
+      propertyPath: moments.Array.data[0].ErrorRange
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1409600386, guid: 4f74aeefb7da65d4cad91effd89ff6ac, type: 3}
+      propertyPath: moments.Array.data[0].FinishTime
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1409600386, guid: 4f74aeefb7da65d4cad91effd89ff6ac, type: 3}
+      propertyPath: moments.Array.data[1].FinishTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1409600386, guid: 4f74aeefb7da65d4cad91effd89ff6ac, type: 3}
       propertyPath: Moments.Array.data[0].DistanceOfArco
       value: 0
       objectReference: {fileID: 0}
@@ -821,6 +833,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8300158106663320449, guid: 4f74aeefb7da65d4cad91effd89ff6ac, type: 3}
+      propertyPath: ranckError
+      value: 0.1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f74aeefb7da65d4cad91effd89ff6ac, type: 3}
 --- !u!1 &725245463 stripped
@@ -867,6 +883,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ranckError: 0.1
   checkOutClip: 0
+  IsGoodTiming: 0
 --- !u!1 &831344352
 GameObject:
   m_ObjectHideFlags: 0

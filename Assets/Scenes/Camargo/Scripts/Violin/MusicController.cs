@@ -51,7 +51,7 @@ public class MusicController : MonoBehaviour
 
     private void PlayingClip()
     {
-        
+        int i = 0;
         if (MPA.Speed != 0)
             isPlaying = true;
         else
@@ -61,7 +61,7 @@ public class MusicController : MonoBehaviour
         {
             if (isLeft)
             {
-
+                //checkerCode.CheckMusic(moments[i].DistanceOfArco, )
             }
         }
 
