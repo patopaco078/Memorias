@@ -3,11 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="3b3a568c-cb02-4475-b26c-77aa08bafad9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Memorias/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Memorias/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Fungus Test.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Fungus Test.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/1Main/main_Alpha.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/1Main/main_Alpha.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Nico/Prueba Fungus 01.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Nico/Prueba Fungus 01.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Fungus y Dialogos/DialogSelector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Fungus y Dialogos/DialogSelector.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,6 +81,7 @@
       <updated>1676678178871</updated>
       <workItem from="1677930164788" duration="65000" />
       <workItem from="1677930260738" duration="977000" />
+      <workItem from="1678571564606" duration="1646000" />
     </task>
     <servers />
   </component>
