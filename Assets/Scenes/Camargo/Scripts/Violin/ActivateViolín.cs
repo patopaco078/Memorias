@@ -17,6 +17,7 @@ public class ActivateViolín : MonoBehaviour
 
     private void Update()
     {
+        //desde acá se puede activar o desactivar el viólin en pantalla
         if (MusicController.CanUse)
         {
             if (Input.GetKeyDown(KeyCode.Q))

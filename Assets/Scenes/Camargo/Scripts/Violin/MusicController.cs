@@ -17,7 +17,8 @@ public class MusicController : MonoBehaviour
     private bool canUse = false;
 
     [SerializeField] bool isLeft;
-    bool a = true;
+    bool NowIsLeft = true;
+    float TimeToCorrectTiming = 0f;
 
     public bool CanUse { get => canUse;}
     public ClipMusic[] Moments { get => moments; set => moments = value; }
@@ -51,40 +52,10 @@ public class MusicController : MonoBehaviour
 
     private void PlayingClip()
     {
-        int i = 0;
-        if (MPA.Speed != 0)
-            isPlaying = true;
-        else
-            isPlaying = false;
-        
-        if (isPlaying)
+        if(isLeft == NowIsLeft)
         {
-            if (isLeft)
-            {
-                //checkerCode.CheckMusic(moments[i].DistanceOfArco, )
-            }
+            //if(checkerCode.CheckMusic(moments[ActualClip],))
         }
-
-        if (isPlaying)
-        {
-            if (a)
-            {
-                aS.Play();
-                //Debug.Log("a");
-                a = false;
-            }
-        }
-
-        else
-        {
-            //Debug.Log("b");
-            aS.Pause();
-            a = true;
-        }
-
-        //-------------------------NEW CODE-------------------------
-
-
     }
 
     private void startClip()
@@ -100,5 +71,18 @@ public class MusicController : MonoBehaviour
     public void NowCanUseViolin()
     {
         canUse = true;
+    }
+
+    private bool CorrectTiming()
+    {
+        TimeToCorrectTiming += Time.deltaTime;
+        if(TimeToCorrectTiming < checkerCode.RanckError)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 }
