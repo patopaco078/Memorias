@@ -1,18 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+//camargo
 
 public class ClipVideo : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public Transform Position;
+    public float TimeAnimation;
 
-    // Update is called once per frame
-    void Update()
+    public UnityEvent CallFuntions;
+
+    public int Pestaña;
+
+    private void Start()
     {
-        
+        Position = transform;
     }
 }
