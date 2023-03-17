@@ -27,12 +27,12 @@ public class MousePositionArco : MonoBehaviour
 
         speed = promedioPositions();
 
-        //Debug.Log(speeds.Count + " speed = " + speeds[0]);
         lastPosition = transform.localPosition.x;
 
         transform.localPosition = new Vector3((-1)*cam.ScreenToViewportPoint(Input.mousePosition).x, positiony, PositionArcoToCamera);
     }
 
+    //funcion necesaria para que el programa no arroje falsos positivos
     private float promedioPositions()
     {
         float sumatoria = 0;
@@ -43,6 +43,7 @@ public class MousePositionArco : MonoBehaviour
         return sumatoria / TotalPromedioSpeeds;
     }
 
+    //se llama esto cuando el jugador esta tocando el violin con el arco
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Violin")

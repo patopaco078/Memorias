@@ -22,8 +22,6 @@ public class ActualizateClipMusic : MonoBehaviour
                 MC.Moments[i].DistanceN = LongDistance;
             if (MC.Moments[i].DistanceOfArco == ClipMusic.Distance.DistanceShort)
                 MC.Moments[i].DistanceN = ShortDistance;
-
-            Debug.Log(MC.Moments[i].DistanceN);
         }
     }
 }
