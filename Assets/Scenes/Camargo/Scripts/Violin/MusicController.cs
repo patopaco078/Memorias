@@ -14,11 +14,13 @@ public class MusicController : MonoBehaviour
     int ActualClip = 0;
     private AudioSource aS;
     [SerializeField] private bool isPlaying = false;
-    private bool canUse = false;
+    [SerializeField] private bool canUse = false;
 
     [SerializeField] bool isLeft;
-    bool NowIsLeft = true;
+    [SerializeField] bool NowIsLeft = true;
     float TimeToCorrectTiming = 0f;
+    bool TryPLayMusic = true;
+    
 
     public bool CanUse { get => canUse;}
     public ClipMusic[] Moments { get => moments; set => moments = value; }
@@ -54,7 +56,31 @@ public class MusicController : MonoBehaviour
     {
         if(isLeft == NowIsLeft)
         {
-            //if(checkerCode.CheckMusic(moments[ActualClip],))
+            Debug.Log("Level 1");
+            if (checkerCode.CheckMusic(moments[ActualClip].DistanceN, PlayerArcoPosition(), aS.time, moments[ActualClip].FinishTime) || CorrectTiming())
+            {
+                Debug.Log("Level 2");
+                if (TryPLayMusic)
+                {
+                    Debug.Log("Level 3");
+                    aS.Play();
+                    TryPLayMusic = false;
+                }
+                if(CorrectTiming() && checkerCode.IsGoodTiming)
+                {
+                    Debug.Log("Level 4");
+                    ChangeDirection();
+                }
+            }
+            else
+            {
+                Debug.Log("se cansela");
+                checkerCode.ResetCheckOutClip();
+                aS.Stop();
+
+                TryPLayMusic = true;
+            }
+
         }
     }
 
@@ -79,10 +105,31 @@ public class MusicController : MonoBehaviour
         if(TimeToCorrectTiming < checkerCode.RanckError)
         {
             return true;
+            TimeToCorrectTiming = 0f;
         }
         else
         {
             return false;
+        }
+    }
+
+    private float PlayerArcoPosition()
+    {
+        return MPA.ActualPosition.position.x - MPA.StartPosition.x;
+    }
+
+    public void ChangeDirection()
+    {
+        bool momentaryA = true;
+        if (NowIsLeft && momentaryA)
+        {
+            NowIsLeft = false;
+            momentaryA = false;
+        }
+        if (!NowIsLeft && momentaryA)
+        {
+            NowIsLeft = true;
+            momentaryA = false;
         }
     }
 }

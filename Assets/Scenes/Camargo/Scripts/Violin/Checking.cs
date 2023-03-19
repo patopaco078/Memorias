@@ -7,20 +7,28 @@ public class Checking : MonoBehaviour
 {
     [SerializeField] float ranckError; //Rango de error
     [SerializeField] float checkOutClip; //dependiendo de que tan bien lo haga el jugador, llegara a 1 que es el maximo
-    [SerializeField] bool IsGoodTiming = false; //
+    [SerializeField] bool isGoodTiming = false; //
+
+    //para mover y dar respuesta en la ui.
+    [SerializeField] RectTransform Guia;
+    [SerializeField] float MultiplicadorDeMovimiento;
+    Vector3 VectorGuia = new Vector3(451.7f, 138f, 0f);
 
     public float CheckOutClip { get => checkOutClip; }
-    public bool IsGoodTiming1 { get => IsGoodTiming; }
+    public bool IsGoodTiming { get => isGoodTiming; }
     public float RanckError { get => ranckError; }
 
     //funcion para checar que el jugador lo este haciendo bien.
     public bool CheckMusic(float Distances, float DistancePlayer, float TimeMusic, float TimeClip)
     {
+        Guia.position = VectorGuia;
         float ActualDistanceCorrect = Distances * (TimeMusic / TimeClip);
-        if(DistancePlayer < (ActualDistanceCorrect + ranckError) && DistancePlayer > (ActualDistanceCorrect - ranckError))
+        VectorGuia.y = ((DistancePlayer - ActualDistanceCorrect) * MultiplicadorDeMovimiento) + 138f;
+        if (DistancePlayer < (ActualDistanceCorrect + ranckError) && DistancePlayer > (ActualDistanceCorrect - ranckError))
         {
             checkOutClip += Time.deltaTime / TimeClip;
             return true;
+            
         }
         else
         {
@@ -29,7 +37,7 @@ public class Checking : MonoBehaviour
 
         if(TimeMusic >= TimeClip && DistancePlayer > (Distances - ranckError))
         {
-            IsGoodTiming = true;
+            isGoodTiming = true;
         }
     }
 
@@ -37,6 +45,6 @@ public class Checking : MonoBehaviour
     public void ResetCheckOutClip()
     {
         checkOutClip = 0f;
-        IsGoodTiming = false;
+        isGoodTiming = false;
     }
 }
