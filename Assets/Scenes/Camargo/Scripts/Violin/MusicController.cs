@@ -33,11 +33,13 @@ public class MusicController : MonoBehaviour
 
     private void Update()
     {
-        if (canUse)
+        if (canUse && !checkerCode.IsGoodTiming)
         {
             detectSide();
             PlayingClip();
         }
+        if (checkerCode.IsGoodTiming)
+            aS.Stop();
     }
 
     private void detectSide()
@@ -56,19 +58,19 @@ public class MusicController : MonoBehaviour
     {
         if(isLeft == NowIsLeft)
         {
-            Debug.Log("Level 1");
-            if (checkerCode.CheckMusic(moments[ActualClip].DistanceN, PlayerArcoPosition(), aS.time, moments[ActualClip].FinishTime) || CorrectTiming())
+            //Debug.Log("Level 1");
+            if (checkerCode.CheckMusic((moments[ActualClip].DistanceN / moments[ActualClip].FinishTime), MPA.Speed, aS.time, moments[ActualClip].FinishTime) || CorrectTiming())
             {
-                Debug.Log("Level 2");
+               // Debug.Log("Level 2");
                 if (TryPLayMusic)
                 {
-                    Debug.Log("Level 3");
+                    //Debug.Log("Level 3");
                     aS.Play();
                     TryPLayMusic = false;
                 }
                 if(CorrectTiming() && checkerCode.IsGoodTiming)
                 {
-                    Debug.Log("Level 4");
+                    //Debug.Log("Level 4");
                     ChangeDirection();
                 }
             }
@@ -104,8 +106,8 @@ public class MusicController : MonoBehaviour
         TimeToCorrectTiming += Time.deltaTime;
         if(TimeToCorrectTiming < checkerCode.RanckError)
         {
-            return true;
             TimeToCorrectTiming = 0f;
+            return true;
         }
         else
         {

@@ -12,7 +12,6 @@ public class ClipMusic
 
     [SerializeField] Distance distanceOfArco;
     [SerializeField] float finishTime;
-    [SerializeField] float ErrorRange;
 
     
     private float distanceN;
