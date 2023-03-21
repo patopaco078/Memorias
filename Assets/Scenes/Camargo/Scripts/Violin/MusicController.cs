@@ -33,7 +33,7 @@ public class MusicController : MonoBehaviour
 
     private void Update()
     {
-        if (canUse && !checkerCode.IsGoodTiming)
+        if (canUse && !checkerCode.IsGoodTiming && MPA.IsTouchViolin)
         {
             detectSide();
             PlayingClip();
@@ -99,6 +99,10 @@ public class MusicController : MonoBehaviour
     public void NowCanUseViolin()
     {
         canUse = true;
+    }
+    public void NowCantUseViolin()
+    {
+        canUse = false;
     }
 
     private bool CorrectTiming()
