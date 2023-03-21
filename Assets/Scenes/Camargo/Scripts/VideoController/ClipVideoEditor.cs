@@ -11,6 +11,7 @@ public class ClipVideoEditor : Editor
     public SerializedObject SOClipVideo;
 
     public SerializedProperty TimeAnimation;
+    public SerializedProperty BehaviorMove;
     public SerializedProperty CallFuntions;
 
     public ClipVideo ClipVideo { get => clipVideo;}
@@ -21,6 +22,7 @@ public class ClipVideoEditor : Editor
         SOClipVideo = new SerializedObject(target);
 
         TimeAnimation = SOClipVideo.FindProperty("TimeAnimation");
+        BehaviorMove = SOClipVideo.FindProperty("BehaviorMove");
         CallFuntions = SOClipVideo.FindProperty("CallFuntions");
     }
 
@@ -34,6 +36,7 @@ public class ClipVideoEditor : Editor
         {
             case 0:
                 EditorGUILayout.PropertyField(TimeAnimation);
+                EditorGUILayout.PropertyField(BehaviorMove);
                 break;
             case 1:
                 EditorGUILayout.PropertyField(CallFuntions);

@@ -24,6 +24,7 @@ public class ActivateViolín : MonoBehaviour
             {
                 if (!isActivate && a)
                 {
+                    Debug.Log("a");
                     violin.SetActive(true);
                     isActivate = true;
                     a = false;

@@ -14,13 +14,11 @@ public class MusicController : MonoBehaviour
     int ActualClip = 0;
     private AudioSource aS;
     [SerializeField] private bool isPlaying = false;
-    [SerializeField] private bool canUse = false;
+    private bool canUse = false;
 
     [SerializeField] bool isLeft;
-    [SerializeField] bool NowIsLeft = true;
+    bool NowIsLeft = true;
     float TimeToCorrectTiming = 0f;
-    bool TryPLayMusic = true;
-    
 
     public bool CanUse { get => canUse;}
     public ClipMusic[] Moments { get => moments; set => moments = value; }
@@ -33,13 +31,11 @@ public class MusicController : MonoBehaviour
 
     private void Update()
     {
-        if (canUse && !checkerCode.IsGoodTiming)
+        if (canUse)
         {
             detectSide();
             PlayingClip();
         }
-        if (checkerCode.IsGoodTiming)
-            aS.Stop();
     }
 
     private void detectSide()
@@ -58,31 +54,7 @@ public class MusicController : MonoBehaviour
     {
         if(isLeft == NowIsLeft)
         {
-            //Debug.Log("Level 1");
-            if (checkerCode.CheckMusic((moments[ActualClip].DistanceN / moments[ActualClip].FinishTime), MPA.Speed, aS.time, moments[ActualClip].FinishTime) || CorrectTiming())
-            {
-               // Debug.Log("Level 2");
-                if (TryPLayMusic)
-                {
-                    //Debug.Log("Level 3");
-                    aS.Play();
-                    TryPLayMusic = false;
-                }
-                if(CorrectTiming() && checkerCode.IsGoodTiming)
-                {
-                    //Debug.Log("Level 4");
-                    ChangeDirection();
-                }
-            }
-            else
-            {
-                Debug.Log("se cansela");
-                checkerCode.ResetCheckOutClip();
-                aS.Stop();
-
-                TryPLayMusic = true;
-            }
-
+            //if(checkerCode.CheckMusic(moments[ActualClip],))
         }
     }
 
@@ -106,32 +78,11 @@ public class MusicController : MonoBehaviour
         TimeToCorrectTiming += Time.deltaTime;
         if(TimeToCorrectTiming < checkerCode.RanckError)
         {
-            TimeToCorrectTiming = 0f;
             return true;
         }
         else
         {
             return false;
-        }
-    }
-
-    private float PlayerArcoPosition()
-    {
-        return MPA.ActualPosition.position.x - MPA.StartPosition.x;
-    }
-
-    public void ChangeDirection()
-    {
-        bool momentaryA = true;
-        if (NowIsLeft && momentaryA)
-        {
-            NowIsLeft = false;
-            momentaryA = false;
-        }
-        if (!NowIsLeft && momentaryA)
-        {
-            NowIsLeft = true;
-            momentaryA = false;
         }
     }
 }

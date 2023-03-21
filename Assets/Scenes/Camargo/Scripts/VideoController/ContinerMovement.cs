@@ -43,6 +43,7 @@ public class ContinerMovement : MonoBehaviour
                 if (TimeAnimationCamera < TimeLine[i].TimeAnimation)
                 {
                     TimeAnimationCamera += Time.deltaTime;
+                    
                 }
                 if (ISCallPosition)
                 {
@@ -57,7 +58,6 @@ public class ContinerMovement : MonoBehaviour
                     ISCallPosition = true;
                 }
                 break;
-
             case 1:
                 TimeLine[i].CallFuntions.Invoke();
                 i++;

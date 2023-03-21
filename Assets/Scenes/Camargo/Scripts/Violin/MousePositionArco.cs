@@ -13,12 +13,8 @@ public class MousePositionArco : MonoBehaviour
     [SerializeField] private int TotalPromedioSpeeds = 3;
     [SerializeField] private bool isTouchViolin = false;
 
-    private Vector3 startPosition;
-
     public float Speed { get => speed;}
     public bool IsTouchViolin { get => isTouchViolin;}
-    public Vector3 StartPosition { get => startPosition; }
-    public Transform ActualPosition { get => transform; }
 
     private void Update()
     {
@@ -51,11 +47,7 @@ public class MousePositionArco : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Violin")
-        {
             isTouchViolin = true;
-            startPosition = transform.position;
-        }
-            
     }
     private void OnTriggerExit(Collider other)
     {
