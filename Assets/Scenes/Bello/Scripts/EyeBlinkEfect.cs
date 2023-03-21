@@ -49,15 +49,15 @@ public class EyeBlinkEfect : MonoBehaviour
         yield return new WaitForSeconds(transitionTime);
         videoPlayer.Play();
         isPlaying = true;
-        Invoke("BlinkExit", (float)videoPlayer.length + 0.5f - transitionTime);
-        yield return new WaitForSeconds((float)videoPlayer.length);
+        Invoke("BlinkExit",  2f + 0.5f - transitionTime);
+        yield return new WaitForSeconds(2f);
         videoPlayer.Stop();
         noBlinking.Invoke();
         isPlaying = false;
         
     }
 
-    //
+    // Estos valores son los reales (float)videoPlayer.length (float)videoPlayer.length los que puse fue por que el video era muy largo
 
 
 }
