@@ -1,42 +1,95 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 //camargo
 
 public class Checking : MonoBehaviour
 {
     [SerializeField] float ranckError; //Rango de error
     [SerializeField] float checkOutClip; //dependiendo de que tan bien lo haga el jugador, llegara a 1 que es el maximo
-    [SerializeField] bool IsGoodTiming = false; //
+    [SerializeField] bool isGoodTiming = false;
+
+    //VELOCIDAD DE EL ARCO DEL JUGADOR
+    [SerializeField] int _AVERAGERANGE = 1;
+    float distancePlayerPrev; //Velocidad actual del arco del jugador
+    private List<float> speeds = new List<float>();
+    private float _DistancePlayer;
+
+    //para mover y dar respuesta en la ui.
+    [SerializeField] GameObject UIViolin;
+    [SerializeField] RectTransform Guia;
+    [SerializeField] float MultiplicadorDeMovimiento;
+    Vector3 VectorGuia = new Vector3(451.7f, 138f, 0f);
+    [SerializeField] UnityEvent whentCall;
 
     public float CheckOutClip { get => checkOutClip; }
-    public bool IsGoodTiming1 { get => IsGoodTiming; }
+    public bool IsGoodTiming { get => isGoodTiming; }
     public float RanckError { get => ranckError; }
 
-    //funcion para checar que el jugador lo este haciendo bien.
-    public bool CheckMusic(float Distances, float DistancePlayer, float TimeMusic, float TimeClip)
+    private void Start()
     {
-        float ActualDistanceCorrect = Distances * (TimeMusic / TimeClip);
-        if(DistancePlayer < (ActualDistanceCorrect + ranckError) && DistancePlayer > (ActualDistanceCorrect - ranckError))
+        DisappearUIViolin();
+    }
+
+    private void Update()
+    {
+        if (speeds.Count > _AVERAGERANGE)
         {
-            checkOutClip += Time.deltaTime / TimeClip;
+            speeds.RemoveAt(0);
+        }
+    }
+
+
+    //funcion para checar que el jugador lo este haciendo bien.
+    public bool CheckMusic(float CorrectSpeed, float DistancePlayer, float TimeMusic, float TimeClip)
+    {
+        _DistancePlayer = DistancePlayer;
+
+        Guia.anchoredPosition = new Vector2(152.19f , VectorGuia.y);
+        VectorGuia.y = (DistancePlayer * MultiplicadorDeMovimiento);
+        if (checkOutClip > 1f)
+        {
+            isGoodTiming = true;
+            whentCall.Invoke();
+        }
+        if (DistancePlayer < (CorrectSpeed + ranckError) && DistancePlayer > (CorrectSpeed - ranckError))
+        {
+            checkOutClip += Time.deltaTime; // TimeClip;
             return true;
         }
-        else
-        {
-            return false;
-        }
 
-        if(TimeMusic >= TimeClip && DistancePlayer > (Distances - ranckError))
-        {
-            IsGoodTiming = true;
-        }
+        
+
+        return false;
     }
 
     //funcion para reiniciar el sistema | en caso de que lo haga mal o termine de tocar.
     public void ResetCheckOutClip()
     {
         checkOutClip = 0f;
-        IsGoodTiming = false;
+        isGoodTiming = false;
+    }
+
+    private void FindOutSpeed(float DistancePlayer)
+    {
+        //NEW CODE
+
+        float timeElapsed = Time.deltaTime;
+        float distanceTraveled = Mathf.Abs(DistancePlayer - distancePlayerPrev);
+        float currentSpeed = distanceTraveled / timeElapsed;
+        distancePlayerPrev = DistancePlayer;
+        Debug.Log(currentSpeed);
+    }
+
+    //
+    public void AppearUIViolin()
+    {
+        UIViolin.SetActive(true);
+    }
+
+    public void DisappearUIViolin()
+    {
+        UIViolin.SetActive(false);
     }
 }

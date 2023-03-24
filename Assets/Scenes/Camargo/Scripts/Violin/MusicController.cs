@@ -14,11 +14,13 @@ public class MusicController : MonoBehaviour
     int ActualClip = 0;
     private AudioSource aS;
     [SerializeField] private bool isPlaying = false;
-    private bool canUse = false;
+    [SerializeField] private bool canUse = false;
 
     [SerializeField] bool isLeft;
-    bool NowIsLeft = true;
+    [SerializeField] bool NowIsLeft = true;
     float TimeToCorrectTiming = 0f;
+    bool TryPLayMusic = true;
+    
 
     public bool CanUse { get => canUse;}
     public ClipMusic[] Moments { get => moments; set => moments = value; }
@@ -31,11 +33,13 @@ public class MusicController : MonoBehaviour
 
     private void Update()
     {
-        if (canUse)
+        if (canUse && !checkerCode.IsGoodTiming && MPA.IsTouchViolin)
         {
             detectSide();
             PlayingClip();
         }
+        if (checkerCode.IsGoodTiming)
+            aS.Stop();
     }
 
     private void detectSide()
@@ -54,7 +58,31 @@ public class MusicController : MonoBehaviour
     {
         if(isLeft == NowIsLeft)
         {
-            //if(checkerCode.CheckMusic(moments[ActualClip],))
+            //Debug.Log("Level 1");
+            if (checkerCode.CheckMusic((moments[ActualClip].DistanceN / moments[ActualClip].FinishTime), MPA.Speed, aS.time, moments[ActualClip].FinishTime) || CorrectTiming())
+            {
+               // Debug.Log("Level 2");
+                if (TryPLayMusic)
+                {
+                    //Debug.Log("Level 3");
+                    aS.Play();
+                    TryPLayMusic = false;
+                }
+                if(CorrectTiming() && checkerCode.IsGoodTiming)
+                {
+                    //Debug.Log("Level 4");
+                    ChangeDirection();
+                }
+            }
+            else
+            {
+                Debug.Log("se cansela");
+                checkerCode.ResetCheckOutClip();
+                aS.Stop();
+
+                TryPLayMusic = true;
+            }
+
         }
     }
 
@@ -72,17 +100,42 @@ public class MusicController : MonoBehaviour
     {
         canUse = true;
     }
+    public void NowCantUseViolin()
+    {
+        canUse = false;
+    }
 
     private bool CorrectTiming()
     {
         TimeToCorrectTiming += Time.deltaTime;
         if(TimeToCorrectTiming < checkerCode.RanckError)
         {
+            TimeToCorrectTiming = 0f;
             return true;
         }
         else
         {
             return false;
+        }
+    }
+
+    private float PlayerArcoPosition()
+    {
+        return MPA.ActualPosition.position.x - MPA.StartPosition.x;
+    }
+
+    public void ChangeDirection()
+    {
+        bool momentaryA = true;
+        if (NowIsLeft && momentaryA)
+        {
+            NowIsLeft = false;
+            momentaryA = false;
+        }
+        if (!NowIsLeft && momentaryA)
+        {
+            NowIsLeft = true;
+            momentaryA = false;
         }
     }
 }

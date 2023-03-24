@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 //camargo
 
 public class ActivateViolín : MonoBehaviour
@@ -8,7 +9,10 @@ public class ActivateViolín : MonoBehaviour
     [SerializeField] MusicController MusicController;
     [SerializeField] GameObject violin;
     bool isActivate = false;
-    [SerializeField] bool a =true;
+    bool a =true;
+
+    [SerializeField] UnityEvent OnActivate;
+    [SerializeField] UnityEvent OnDesactivate;
 
     private void Start()
     {
@@ -24,16 +28,11 @@ public class ActivateViolín : MonoBehaviour
             {
                 if (!isActivate && a)
                 {
-                    Debug.Log("a");
-                    violin.SetActive(true);
-                    isActivate = true;
-                    a = false;
+                    ActivateViolinInGame();
                 }
                 if (isActivate && a)
                 {
-                    violin.SetActive(false);
-                    isActivate = false;
-                    a = false;
+                    DesactivateViolinInGame();
                 }
             }
 
@@ -42,5 +41,21 @@ public class ActivateViolín : MonoBehaviour
                 a = true;
             }
         }
+    }
+
+    public void ActivateViolinInGame()
+    {
+        OnActivate.Invoke();
+        violin.SetActive(true);
+        isActivate = true;
+        a = false;
+    }
+
+    public void DesactivateViolinInGame()
+    {
+        OnDesactivate.Invoke();
+        violin.SetActive(false);
+        isActivate = false;
+        a = false;
     }
 }
