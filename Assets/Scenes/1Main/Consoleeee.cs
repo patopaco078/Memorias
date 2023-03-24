@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class Consoleeee : MonoBehaviour
 {
-    public void LlamarFuncion()
+    [SerializeField] RectTransform ObjectUI;
+
+    private void Update()
     {
-        Debug.Log("si a todo");
+        Debug.Log(ObjectUI.anchoredPosition);
     }
 }
