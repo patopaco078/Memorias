@@ -17,8 +17,7 @@ public class Checking : MonoBehaviour
     private float _DistancePlayer;
 
     //para mover y dar respuesta en la ui.
-    [SerializeField] RectTransform BACK_Guia1;
-    [SerializeField] RectTransform BAKC_Guia2;
+    [SerializeField] GameObject UIViolin;
     [SerializeField] RectTransform Guia;
     [SerializeField] float MultiplicadorDeMovimiento;
     Vector3 VectorGuia = new Vector3(451.7f, 138f, 0f);
@@ -30,14 +29,11 @@ public class Checking : MonoBehaviour
 
     private void Start()
     {
-        BACK_Guia1.position = new Vector3(451.7f, 238f, 0f);
-        BAKC_Guia2.position = new Vector3(451.7f, 204f, 0f);
+        DisappearUIViolin();
     }
 
     private void Update()
     {
-        //speeds.Add();
-
         if (speeds.Count > _AVERAGERANGE)
         {
             speeds.RemoveAt(0);
@@ -50,8 +46,8 @@ public class Checking : MonoBehaviour
     {
         _DistancePlayer = DistancePlayer;
 
-        Guia.position = VectorGuia;
-        VectorGuia.y = (DistancePlayer * MultiplicadorDeMovimiento) + 138f;
+        Guia.anchoredPosition = new Vector2(152.19f , VectorGuia.y);
+        VectorGuia.y = (DistancePlayer * MultiplicadorDeMovimiento);
         if (checkOutClip > 1f)
         {
             isGoodTiming = true;
@@ -84,5 +80,16 @@ public class Checking : MonoBehaviour
         float currentSpeed = distanceTraveled / timeElapsed;
         distancePlayerPrev = DistancePlayer;
         Debug.Log(currentSpeed);
+    }
+
+    //
+    public void AppearUIViolin()
+    {
+        UIViolin.SetActive(true);
+    }
+
+    public void DisappearUIViolin()
+    {
+        UIViolin.SetActive(false);
     }
 }
