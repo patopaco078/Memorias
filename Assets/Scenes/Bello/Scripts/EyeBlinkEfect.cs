@@ -38,7 +38,7 @@ public class EyeBlinkEfect : MonoBehaviour
     {
        blinking.Invoke();
        anim.SetTrigger("isBlinking");
-        StartCoroutine(stopBlink());
+        //StartCoroutine(stopBlink());
     }
     public void BlinkExit()
     {
@@ -57,6 +57,24 @@ public class EyeBlinkEfect : MonoBehaviour
         
     }
 
+    public void TestBlink()
+    {
+        videoPlayer.Play();
+        isPlaying = true;
+        Invoke("StopTestBlink", 2.0f - transitionTime);
+    }
+
+    private void StopTestBlink()
+    {
+        anim.SetTrigger("OutBlink");
+    }   
+
+    public void Stoop()
+    {
+        videoPlayer.Stop();
+        noBlinking.Invoke();
+        isPlaying = false;
+    }
     // Estos valores son los reales (float)videoPlayer.length (float)videoPlayer.length los que puse fue por que el video era muy largo
 
 
