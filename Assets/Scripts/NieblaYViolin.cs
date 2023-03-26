@@ -8,8 +8,9 @@ using UnityEngine.Serialization;
 
 public class NieblaYViolin : MonoBehaviour
 {
-    [SerializeField] float durationOfTransition = 10f;
     [SerializeField] private Material mistMaterial; //Material con el Shader de la niebla
+    [SerializeField] float durationOfTransition = 10f;
+    
     private float startTime = 0.0f; 
     private float alpha = 1.0f;
     private float timeOfTransition = 0.0f; 
@@ -27,18 +28,14 @@ public class NieblaYViolin : MonoBehaviour
     {
         timeOfTransition  = (Time.time - startTime) / durationOfTransition;
         alpha = Mathf.Lerp(1f, 0f, timeOfTransition );
-        mistMaterial.SetFloat("Vector1_5a3d200a9ae8451e9b76f30e27f2c0a6", alpha); 
-        //El nombre largo y feo es el que tenía por defecto el float alpha en el shadergraph
-        //Deberías de revisar eso para ca,biarlo en un futuro
+        mistMaterial.SetFloat("_alpha", alpha);
     }
 
     public void FadeMistIn()
     {
         timeOfTransition  = (Time.time - startTime) / durationOfTransition;
         alpha = Mathf.Lerp(1f, 0f, timeOfTransition );
-        mistMaterial.SetFloat("Vector1_5a3d200a9ae8451e9b76f30e27f2c0a6", alpha); 
-        //El nombre largo y feo es el que tenía por defecto el float alpha en el shadergraph
-        //Deberíamos de revisar eso para cambiarlo en un futuro
+        mistMaterial.SetFloat("_alpha", alpha);
         doThisWhenActivateMist.Invoke();
     }
     
@@ -46,9 +43,7 @@ public class NieblaYViolin : MonoBehaviour
     {
         timeOfTransition  = (Time.time - startTime) / durationOfTransition;
         alpha = Mathf.Lerp(0f, 1f, timeOfTransition );
-        mistMaterial.SetFloat("Vector1_5a3d200a9ae8451e9b76f30e27f2c0a6", alpha); 
-        //El nombre largo y feo es el que tenía por defecto el float alpha en el shadergraph
-        //Deberíamos de revisar eso para cambiarlo en un futuro
+        mistMaterial.SetFloat("_alpha", alpha);
         doThisWhenMistEnd.Invoke();
     } 
 
