@@ -10,11 +10,13 @@ public class DoorController : MonoBehaviour
     de la puerta */
     [Header("Door Animator"),SerializeField] private Animator doorAnimator;
     [Header("Door Collider"), SerializeField] private Collider doorCollider;
+    private AudioSource m_audioSouerce;
     private Collider myTriggerCollider; /*El collider del doorSystem es desactivado en el Awake para evitar que 
     detecte al jugador y abrá la puerta */
 
     private void Awake()
     {
+        m_audioSouerce = GetComponent<AudioSource>();
         myTriggerCollider = GetComponent<Collider>();
         myTriggerCollider.enabled = false;
     }
@@ -30,6 +32,7 @@ public class DoorController : MonoBehaviour
     {
         if (!other.CompareTag("Player")) return;
         doorAnimator.SetBool("isClosed", true);
+        m_audioSouerce.Play();
     }
 
     private void OnTriggerExit(Collider other)
