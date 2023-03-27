@@ -31,13 +31,23 @@ public class DoorController : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (!other.CompareTag("Player")) return;
-        doorAnimator.SetBool("isClosed", true);
-        m_audioSouerce.Play();
+        OpenDoor();
     }
 
     private void OnTriggerExit(Collider other)
     {
         if (!other.CompareTag("Player")) return;
+        CloseDoor();
+    }
+
+    public void OpenDoor()
+    {
+        doorAnimator.SetBool("isClosed", true);
+        m_audioSouerce.Play();
+    }
+
+    public void CloseDoor()
+    {
         doorAnimator.SetBool("isClosed", false);
     }
 }

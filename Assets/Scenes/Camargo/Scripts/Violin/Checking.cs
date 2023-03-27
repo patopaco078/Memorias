@@ -27,11 +27,6 @@ public class Checking : MonoBehaviour
     public bool IsGoodTiming { get => isGoodTiming; }
     public float RanckError { get => ranckError; }
 
-    private void Start()
-    {
-        DisappearUIViolin();
-    }
-
     private void Update()
     {
         if (speeds.Count > _AVERAGERANGE)
