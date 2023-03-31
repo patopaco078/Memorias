@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Fungus;
 using UnityEngine;
 //By: Alejo López
 
@@ -19,6 +20,11 @@ public class DoorController : MonoBehaviour
         m_audioSouerce = GetComponent<AudioSource>();
         myTriggerCollider = GetComponent<Collider>();
         myTriggerCollider.enabled = false;
+    }
+
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.P)) BlockDoor();
     }
 
     public void UnlockDoor()
@@ -49,5 +55,13 @@ public class DoorController : MonoBehaviour
     public void CloseDoor()
     {
         doorAnimator.SetBool("isClosed", false);
+    }
+    
+    //Se llama BlockDoor para que la puerta no pueda ser traspasada por el jugador y tampoco se abra.
+    public void BlockDoor()
+    {
+        CloseDoor();
+        myTriggerCollider.enabled = false;
+        doorCollider.enabled = true; 
     }
 }
