@@ -7,6 +7,7 @@ TagManager:
   - Arco
   - Key01
   - Violin
+  - AppearFurniture
   layers:
   - Default
   - TransparentFX
@@ -15,7 +16,7 @@ TagManager:
   - Water
   - UI
   - Interactable
-  - 
+  - Post-Processing Volumes
   - 
   - 
   - whatIsGround

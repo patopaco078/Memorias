@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Fungus;
 using UnityEngine;
 //By: Alejo López
 
@@ -10,13 +11,20 @@ public class DoorController : MonoBehaviour
     de la puerta */
     [Header("Door Animator"),SerializeField] private Animator doorAnimator;
     [Header("Door Collider"), SerializeField] private Collider doorCollider;
+    private AudioSource m_audioSouerce;
     private Collider myTriggerCollider; /*El collider del doorSystem es desactivado en el Awake para evitar que 
     detecte al jugador y abrá la puerta */
 
     private void Awake()
     {
+        m_audioSouerce = GetComponent<AudioSource>();
         myTriggerCollider = GetComponent<Collider>();
         myTriggerCollider.enabled = false;
+    }
+
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.P)) BlockDoor();
     }
 
     public void UnlockDoor()
@@ -29,12 +37,31 @@ public class DoorController : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (!other.CompareTag("Player")) return;
-        doorAnimator.SetBool("isClosed", true);
+        OpenDoor();
     }
 
     private void OnTriggerExit(Collider other)
     {
         if (!other.CompareTag("Player")) return;
+        CloseDoor();
+    }
+
+    public void OpenDoor()
+    {
+        doorAnimator.SetBool("isClosed", true);
+        m_audioSouerce.Play();
+    }
+
+    public void CloseDoor()
+    {
         doorAnimator.SetBool("isClosed", false);
+    }
+    
+    //Se llama BlockDoor para que la puerta no pueda ser traspasada por el jugador y tampoco se abra.
+    public void BlockDoor()
+    {
+        CloseDoor();
+        myTriggerCollider.enabled = false;
+        doorCollider.enabled = true; 
     }
 }
