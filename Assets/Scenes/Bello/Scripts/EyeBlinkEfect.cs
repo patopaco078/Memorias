@@ -53,6 +53,7 @@ public class EyeBlinkEfect : MonoBehaviour
         yield return new WaitForSeconds(2f);
         videoPlayer.Stop();
         noBlinking.Invoke();
+        
         isPlaying = false;
         
     }
