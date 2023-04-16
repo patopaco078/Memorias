@@ -21,6 +21,7 @@ public class Player_moverse : MonoBehaviour
     AudioSource _audioSource; // Audio pasos
     private ushort controlPlayAudio = 0;
     [SerializeField] private float timeToPlayAudio = 1.5f;
+    [SerializeField] private ControlInputs inputState;
 
     float gravity = -10;  
     float vSpeed = 0;
@@ -46,12 +47,12 @@ public class Player_moverse : MonoBehaviour
     void Update()
     {
         MyInput();
-        Mover();
+        if(inputState.state == 0) Mover();
+        if(inputState.state == 1) InvertMove();
         gravedad();
         ActivateViolin();
         WalkingAnimation();
-
-
+        
     }
 
     private void MyInput()
@@ -65,24 +66,13 @@ public class Player_moverse : MonoBehaviour
         Vector3 forwardSpeed = transform.forward * Input.GetAxis("Vertical") * movementSpeed;
         Vector3 rightSpeed = transform.right * Input.GetAxis("Horizontal") * movementSpeed;
         speed = forwardSpeed + rightSpeed;
+    }
 
-        //****Se activan y desactivan las animaciones de Caminar**** Add by Alejo
-        /*
-        if (horizontalInput != 0 || verticalInput != 0)
-        {
-            walkingAnim.SetBool("isMoving", true);
-            if (controlPlayAudio == 0)
-            {
-                _audioSource.Play();
-                controlPlayAudio++;
-            }
-        }
-        else
-        {
-            walkingAnim.SetBool("isMoving", false);
-            _audioSource.Pause();
-            controlPlayAudio = 0;
-        }*/
+    void InvertMove()
+    {
+        Vector3 forwardSpeed = transform.forward * Input.GetAxis("Vertical") * movementSpeed * -1;
+        Vector3 rightSpeed = transform.right * Input.GetAxis("Horizontal") * movementSpeed * -1;
+        speed = forwardSpeed + rightSpeed;
     }
 
 
