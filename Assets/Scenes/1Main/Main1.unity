@@ -9985,18 +9985,6 @@ MonoBehaviour:
   blinking:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 351401446}
-        m_TargetAssemblyTypeName: Player_moverse, Assembly-CSharp
-        m_MethodName: StopMove
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 979637628}
         m_TargetAssemblyTypeName: PlayerLook, Assembly-CSharp
         m_MethodName: CantMoveCamera
@@ -10050,7 +10038,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 501239290}
         m_TargetAssemblyTypeName: NieblaController, Assembly-CSharp
-        m_MethodName: DesactivateNiebla
+        m_MethodName: ActivateNiebla
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -13343,7 +13331,7 @@ Transform:
   - {fileID: 1616605359165300823}
   m_Father: {fileID: 7603182217368807466}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 71.89502, y: 162.5581, z: 89.99998}
 --- !u!4 &1616605359165300823
 Transform:
   m_ObjectHideFlags: 0
@@ -13358,7 +13346,7 @@ Transform:
   - {fileID: 6248262622755244879}
   m_Father: {fileID: 1272727025458708218}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -23.899025, y: 17.123693, z: 29.842585}
 --- !u!4 &2684656733634194994
 Transform:
   m_ObjectHideFlags: 0
@@ -13373,7 +13361,7 @@ Transform:
   - {fileID: 4510563299578625060}
   m_Father: {fileID: 6242974662999082431}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 28.032784, y: -66.04491, z: -26.047363}
 --- !u!137 &2982894141346714450
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -13601,7 +13589,7 @@ Transform:
   - {fileID: 2684656733634194994}
   m_Father: {fileID: 7603182217368807466}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -19.922745, y: -45.682148, z: 90}
 --- !u!4 &6248262622755244879
 Transform:
   m_ObjectHideFlags: 0
@@ -13644,6 +13632,7 @@ GameObject:
   - component: {fileID: 7531053277925882143}
   - component: {fileID: 7190134942215463846}
   - component: {fileID: 7190134942215463847}
+  - component: {fileID: 7190134942215463848}
   m_Layer: 6
   m_Name: Reloj antiguo
   m_TagString: Untagged
@@ -13692,6 +13681,26 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.11045647, y: 0.03687066, z: 0.10534668}
   m_Center: {x: -0.003001213, y: -0.009231597, z: 0}
+--- !u!95 &7190134942215463848
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7190134942215463845}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8ebee1d517ca51d40a700b16bd470f77, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!4 &7531053277925882143
 Transform:
   m_ObjectHideFlags: 0
@@ -13723,7 +13732,7 @@ Transform:
   - {fileID: 1272727025458708218}
   m_Father: {fileID: 7531053277925882143}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: -90, z: 0}
 --- !u!1 &8661782139094371819
 GameObject:
   m_ObjectHideFlags: 0
