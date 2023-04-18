@@ -7,6 +7,9 @@ public class NieblaController : MonoBehaviour
     [SerializeField] Material Niebla2Shader;
     bool AlphaNieblaActivate = false;
     float AlphaNiebla = 0;
+    Color startColor = Color.grey;
+    Color endColor = Color.black;
+    float transitionTime = 2.0f;
 
     private void Start()
     {
@@ -35,6 +38,14 @@ public class NieblaController : MonoBehaviour
     public void DesactivateNiebla()
     {
         AlphaNieblaActivate = false;
+    }
+
+    public void BlackMode()
+    {
+        float t = Mathf.Clamp01(Time.time / transitionTime);
+        Color lerpedColor = Color.Lerp(startColor, endColor, t);
+
+        Niebla2Shader.SetColor("_ShadowColor", lerpedColor);
     }
 
 }
