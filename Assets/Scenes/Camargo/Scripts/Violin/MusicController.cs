@@ -20,10 +20,13 @@ public class MusicController : MonoBehaviour
     [SerializeField] bool NowIsLeft = true;
     float TimeToCorrectTiming = 0f;
     bool TryPLayMusic = true;
-    
+
+    //recordatorio de notas
+    [SerializeField] private bool[] rememberedNotes = new bool[4];
 
     public bool CanUse { get => canUse;}
     public ClipMusic[] Moments { get => moments; set => moments = value; }
+    public bool NowIsLeft1 { get => NowIsLeft;}
 
     private void Start()
     {
@@ -58,19 +61,31 @@ public class MusicController : MonoBehaviour
     {
         if(isLeft == NowIsLeft)
         {
-            //Debug.Log("Level 1");
             if (checkerCode.CheckMusic((moments[ActualClip].DistanceN / moments[ActualClip].FinishTime), MPA.Speed, aS.time, moments[ActualClip].FinishTime) || CorrectTiming())
             {
-               // Debug.Log("Level 2");
                 if (TryPLayMusic)
                 {
-                    //Debug.Log("Level 3");
                     aS.Play();
                     TryPLayMusic = false;
                 }
                 if(CorrectTiming() && checkerCode.IsGoodTiming)
                 {
-                    //Debug.Log("Level 4");
+                    checkerCode.ResetCheckOutClip();
+                    ActualClip++;
+                    ChangeDirection();
+                }
+            }
+            if (checkerCode.CheckMusic((moments[ActualClip].DistanceN / moments[ActualClip].FinishTime), (MPA.Speed * -1), aS.time, moments[ActualClip].FinishTime) || CorrectTiming())
+            {
+                if (TryPLayMusic)
+                {
+                    aS.Play();
+                    TryPLayMusic = false;
+                }
+                if (CorrectTiming() && checkerCode.IsGoodTiming)
+                {
+                    checkerCode.ResetCheckOutClip();
+                    ActualClip++;
                     ChangeDirection();
                 }
             }
@@ -94,6 +109,7 @@ public class MusicController : MonoBehaviour
     private void stopClip()
     {
         aS.Pause();
+        checkerCode.ResetCheckOutClip();
     }
 
     public void NowCanUseViolin()
@@ -108,15 +124,13 @@ public class MusicController : MonoBehaviour
     private bool CorrectTiming()
     {
         TimeToCorrectTiming += Time.deltaTime;
-        if(TimeToCorrectTiming < checkerCode.RanckError)
+        if(TimeToCorrectTiming < 0.1f)
         {
             TimeToCorrectTiming = 0f;
             return true;
         }
-        else
-        {
-            return false;
-        }
+        stopClip();
+        return false;
     }
 
     private float PlayerArcoPosition()
@@ -138,4 +152,40 @@ public class MusicController : MonoBehaviour
             momentaryA = false;
         }
     }
+
+    public void RememberANote()
+    {
+        if (rememberedNotes[0])
+        {
+            rememberedNotes[1] = true;
+            return;
+        }
+        if (rememberedNotes[1])
+        {
+            rememberedNotes[2] = true;
+            return;
+        }
+        if (rememberedNotes[2])
+        {
+            rememberedNotes[3] = true;
+            return;
+        }
+    }
+
+    public void ForgetAllNote()
+    {
+        rememberedNotes[0] = false;
+        rememberedNotes[1] = false;
+        rememberedNotes[2] = false;
+        rememberedNotes[3] = false;
+    }
+
+    public void RememberAllNote()
+    {
+        rememberedNotes[0] = true;
+        rememberedNotes[1] = true;
+        rememberedNotes[2] = true;
+        rememberedNotes[3] = true;
+    }
+
 }

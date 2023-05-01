@@ -48,14 +48,26 @@ public class Checking : MonoBehaviour
             isGoodTiming = true;
             whentCall.Invoke();
         }
-        if (DistancePlayer < (CorrectSpeed + ranckError) && DistancePlayer > (CorrectSpeed - ranckError))
+        Debug.Log("wawawaw");
+        if (checkRackAceptable(CorrectSpeed, DistancePlayer, TimeMusic, TimeClip))
         {
+            Debug.Log("si funciona?");
             checkOutClip += Time.deltaTime; // TimeClip;
             return true;
         }
 
         
 
+        return false;
+    }
+
+    //funcion que se encarga de chequear si esta dentro de los rangos aceptables de movimiento el arco.
+    private bool checkRackAceptable(float CorrectSpeed, float DistancePlayer, float TimeMusic, float TimeClip)
+    {
+        if (DistancePlayer < (CorrectSpeed + ranckError) && DistancePlayer > (CorrectSpeed - ranckError))
+        {
+            return true;
+        }
         return false;
     }
 
