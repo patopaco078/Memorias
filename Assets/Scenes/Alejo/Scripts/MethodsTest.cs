@@ -5,10 +5,10 @@ using UnityEngine;
 
 public class MethodsTest : MonoBehaviour
 {
-    [SerializeField] private UIInstructionsController instructions;
+    [SerializeField] private Teleporter _teleporterPlayer;
     private void OnTriggerEnter(Collider other)
     {
         if(!other.CompareTag("Player"))return;
-        instructions.ShowInstructions();
+        _teleporterPlayer.ChangeOfPlace();
     }
 }
