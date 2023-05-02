@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
 using UnityEngine.Video;
 
@@ -12,10 +13,12 @@ public class EyeBlinkEfect : MonoBehaviour
     private GameObject Pj;
     [SerializeField]
     private Animator anim;
+    [SerializeField] VideoPlayer videoPlayer1;
     public bool blink = false;
     private bool isPlaying = false;
     public UnityEvent blinking;
     public UnityEvent noBlinking;
+    public UnityEvent finishanim1;
     [SerializeField]
     private VideoPlayer videoPlayer;
     //private VideoPlayer[] videoPlayerList = new VideoPlayer[4];
@@ -40,31 +43,20 @@ public class EyeBlinkEfect : MonoBehaviour
     {
        blinking.Invoke();
        anim.SetTrigger("isBlinking");
-        //StartCoroutine(stopBlink());
+        
     }
     public void BlinkExit()
     {
         anim.SetTrigger("isBlinking");
     }
-    IEnumerator stopBlink ()
-    {
-        yield return new WaitForSeconds(transitionTime);
-        videoPlayer.Play();
-        isPlaying = true;
-        Invoke("BlinkExit", (float)videoPlayer.length - transitionTime);
-        yield return new WaitForSeconds(2f);
-        videoPlayer.Stop();
-        noBlinking.Invoke();
-        
-        isPlaying = false;
-        
-    }
+   
 
     public void TestBlink()
     {
         videoPlayer.Play();
         isPlaying = true;
-        Invoke("StopTestBlink", 2.0f - transitionTime);
+        float time = (float)videoPlayer.length;
+        Invoke("StopTestBlink", time - transitionTime);
     }
 
     private void StopTestBlink()
@@ -80,5 +72,27 @@ public class EyeBlinkEfect : MonoBehaviour
     }
     // Estos valores son los reales (float)videoPlayer.length (float)videoPlayer.length los que puse fue por que el video era muy largo
 
+    public void Anim1()
+    {
+        anim.SetTrigger("isBlinkingAnim1");
+    }
+    public void PlayAnim1()
+    {
+        videoPlayer1.Play();
+        isPlaying= true;
+        float time = (float)videoPlayer1.length;
+        Invoke("StopAnim1", time - transitionTime);
+    }
 
+    public void StopAnim1()
+    {
+        anim.SetTrigger("OutBlinkingAnim1");
+    }
+
+    public void StopPlayer1()
+    {
+        videoPlayer1.Stop();
+        isPlaying= false;
+        finishanim1.Invoke();
+    }
 }
