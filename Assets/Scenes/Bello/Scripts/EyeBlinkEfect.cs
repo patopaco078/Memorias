@@ -18,6 +18,8 @@ public class EyeBlinkEfect : MonoBehaviour
     public UnityEvent noBlinking;
     [SerializeField]
     private VideoPlayer videoPlayer;
+    //private VideoPlayer[] videoPlayerList = new VideoPlayer[4];
+
     private float transitionTime = 1.3f;
     // Start is called before the first frame update
     void Start()
@@ -49,7 +51,7 @@ public class EyeBlinkEfect : MonoBehaviour
         yield return new WaitForSeconds(transitionTime);
         videoPlayer.Play();
         isPlaying = true;
-        Invoke("BlinkExit",  2f + 0.5f - transitionTime);
+        Invoke("BlinkExit", (float)videoPlayer.length - transitionTime);
         yield return new WaitForSeconds(2f);
         videoPlayer.Stop();
         noBlinking.Invoke();
