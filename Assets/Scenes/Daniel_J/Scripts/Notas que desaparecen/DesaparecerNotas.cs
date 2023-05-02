@@ -15,7 +15,8 @@ public class DesaparecerNotas : Interactable
     public float moveSpeed = 3.0f;
     private float rotationSpeed = 10.0f;
     public float initialDistance = 1;
-    private MeshCollider mesh;
+   
+    private BoxCollider box;
     private bool isRotating = false;
     private float originalPositionY;
     private int count = 1;
@@ -26,7 +27,8 @@ public class DesaparecerNotas : Interactable
     // Start is called before the first frame update
     void Start()
     {
-        mesh = GetComponent<MeshCollider>();
+       
+        box = GetComponent<BoxCollider>();
     }
 
     // Update is called once per frame
@@ -75,7 +77,7 @@ public class DesaparecerNotas : Interactable
                 transform.Rotate(Vector3.up, -rotateHorizontal, Space.World);
                 transform.Rotate(Vector3.right, rotateVertical, Space.World);
             }
-            mesh.enabled = false;
+            box.enabled = false;
 
             if (Input.GetKeyDown(KeyCode.Escape))
             {
@@ -83,7 +85,7 @@ public class DesaparecerNotas : Interactable
                 isInspecting = false;
                 transform.position = originalPosition;
                 transform.rotation = originalRotation;
-                mesh.enabled = true;
+                box.enabled = true;
                 moveSpeed = 1f;
                 activarObjetivo.Invoke();
 
