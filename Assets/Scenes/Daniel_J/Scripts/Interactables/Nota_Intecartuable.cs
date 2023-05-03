@@ -78,7 +78,7 @@ public class Nota_Intecartuable : Interactable
             }
             mesh.enabled = false;
 
-            if (Input.GetKeyDown(KeyCode.Escape))
+            if (Input.GetKeyDown(KeyCode.E))
             {
                 
                 isInspecting = false;
