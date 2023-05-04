@@ -79,7 +79,7 @@ public class DesaparecerNotas : Interactable
             }
             box.enabled = false;
 
-            if (Input.GetKeyDown(KeyCode.Escape))
+            if (Input.GetKeyDown(KeyCode.E))
             {
 
                 isInspecting = false;
