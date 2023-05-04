@@ -2,6 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 //camargo
+
+public enum MovementDirection
+{
+    Left = 0,
+    Right = 1,
+    None = 2
+}
+
 public class MousePositionArco : MonoBehaviour
 {
     [SerializeField] Camera cam;
@@ -9,7 +17,7 @@ public class MousePositionArco : MonoBehaviour
     [SerializeField] float positiony = 0.2428903f;
     [SerializeField] private float speed;
     private List<float> speeds = new List<float>();
-    private float lastPosition;
+    private Vector3 lastPosition;
     [SerializeField] private int TotalPromedioSpeeds = 3;
     [SerializeField] private bool isTouchViolin = false;
 
@@ -20,9 +28,23 @@ public class MousePositionArco : MonoBehaviour
     public Vector3 StartPosition { get => startPosition; }
     public Transform ActualPosition { get => transform; }
 
+    MovementDirection movementDir;
+    public MovementDirection MovementDir { get => movementDir; }
+
+    Checking checkingCode;
+    MusicController musicController;
+
+    bool flag_CheckedViolinStopPlayed = false;
+
+    private void Start()
+    {
+        checkingCode = transform.parent.GetComponentInChildren<Checking>();
+        musicController = transform.parent.GetComponentInChildren<MusicController>();
+    }
+
     private void Update()
     {
-        speeds.Add((transform.localPosition.x - lastPosition) / Time.deltaTime);
+        speeds.Add(Vector3.Distance(transform.localPosition, lastPosition) / Time.deltaTime);
 
         if(speeds.Count > TotalPromedioSpeeds)
         {
@@ -31,9 +53,36 @@ public class MousePositionArco : MonoBehaviour
 
         speed = promedioPositions();
 
-        lastPosition = transform.localPosition.x;
+        float xDirection = lastPosition.x - transform.localPosition.x;
+
+        movementDir = xDirection > 0 ? MovementDirection.Right : MovementDirection.Left;
+
+        lastPosition = transform.localPosition;
 
         transform.localPosition = new Vector3((-1)*cam.ScreenToViewportPoint(Input.mousePosition).x, positiony, PositionArcoToCamera);
+
+
+        // Verificar en que momento terminamos de tocar el violin de forma erronea
+
+        if (!isTouchViolin)
+        {
+            if (flag_CheckedViolinStopPlayed)
+            {
+                return;
+            }
+
+
+            if (!checkingCode.IsPlayingCorrectly)
+            {
+                musicController.ResetPlayingSequence();
+            }
+
+            flag_CheckedViolinStopPlayed = true;
+        }
+        else if (isTouchViolin && flag_CheckedViolinStopPlayed)
+        {
+            flag_CheckedViolinStopPlayed = false;
+        }
     }
 
     //funcion necesaria para que el programa no arroje falsos positivos

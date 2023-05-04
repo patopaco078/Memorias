@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Events;
+using UnityEngine.Serialization;
 //camargo
 
 public class Checking : MonoBehaviour
@@ -10,22 +12,32 @@ public class Checking : MonoBehaviour
     [SerializeField] float checkOutClip; //dependiendo de que tan bien lo haga el jugador, llegara a 1 que es el maximo
     [SerializeField] bool isGoodTiming = false;
 
+    [SerializeField] bool isPlayingCorrectly = false;
+
     //VELOCIDAD DE EL ARCO DEL JUGADOR
     [SerializeField] int _AVERAGERANGE = 1;
     float distancePlayerPrev; //Velocidad actual del arco del jugador
     private List<float> speeds = new List<float>();
-    private float _DistancePlayer;
+    private float playSpeed;
 
     //para mover y dar respuesta en la ui.
     [SerializeField] GameObject UIViolin;
     [SerializeField] RectTransform Guia;
+
+    [SerializeField] Slider speedIndicatorSlider;
+
     [SerializeField] float MultiplicadorDeMovimiento;
     Vector3 VectorGuia = new Vector3(451.7f, 138f, 0f);
-    [SerializeField] UnityEvent whentCall;
+    [FormerlySerializedAs("whentCall")] public UnityEvent onSecuenceSuccesfullyPlayed;
+    public UnityEvent onSuccesfullyPlayedNote;
 
     public float CheckOutClip { get => checkOutClip; }
     public bool IsGoodTiming { get => isGoodTiming; }
     public float RanckError { get => ranckError; }
+    public bool IsPlayingCorrectly { get => isPlayingCorrectly; }
+
+    [SerializeField] float maxSpeed = 0.04f;
+    [SerializeField] float minSpeed = 0f;
 
     private void Update()
     {
@@ -37,19 +49,29 @@ public class Checking : MonoBehaviour
 
 
     //funcion para checar que el jugador lo este haciendo bien.
-    public bool CheckMusic(float CorrectSpeed, float DistancePlayer, float TimeMusic, float TimeClip)
+    public bool CheckMusic(float distancePlayer, float movementSpeed, float TimeMusic, float TimeClip)
     {
-        _DistancePlayer = DistancePlayer;
+        float sliderFillValue = Mathf.InverseLerp(minSpeed, maxSpeed, movementSpeed);
+        speedIndicatorSlider.value = sliderFillValue;
 
-        Guia.anchoredPosition = new Vector2(152.19f , VectorGuia.y);
-        VectorGuia.y = (DistancePlayer * MultiplicadorDeMovimiento);
+
+        if (sliderFillValue > 0.03 && sliderFillValue < 0.5f)
+        {
+            isPlayingCorrectly = true;
+        }
+        else
+        {
+            isPlayingCorrectly = false;
+        }
+
+        print(movementSpeed);
+
         if (checkOutClip > 1f)
         {
             isGoodTiming = true;
-            whentCall.Invoke();
         }
         Debug.Log("wawawaw");
-        if (checkRackAceptable(CorrectSpeed, DistancePlayer, TimeMusic, TimeClip))
+        if (checkRackAceptable(distancePlayer, movementSpeed, TimeMusic, TimeClip))
         {
             Debug.Log("si funciona?");
             checkOutClip += Time.deltaTime; // TimeClip;

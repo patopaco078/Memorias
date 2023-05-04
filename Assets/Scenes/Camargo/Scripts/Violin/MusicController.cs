@@ -11,13 +11,16 @@ public class MusicController : MonoBehaviour
 
     [SerializeField] MousePositionArco MPA;
     [SerializeField] ClipMusic[] moments;
-    int ActualClip = 0;
+
+    int actualClip = 0;
+    int targetClip = 1;
+
     private AudioSource aS;
     [SerializeField] private bool isPlaying = false;
     [SerializeField] private bool canUse = false;
 
-    [SerializeField] bool isLeft;
-    [SerializeField] bool NowIsLeft = true;
+    [SerializeField] bool isSwipingAndTouchingLeft;
+    [SerializeField] bool playingDirectionIsLeft = true;
     float TimeToCorrectTiming = 0f;
     bool TryPLayMusic = true;
 
@@ -26,7 +29,7 @@ public class MusicController : MonoBehaviour
 
     public bool CanUse { get => canUse;}
     public ClipMusic[] Moments { get => moments; set => moments = value; }
-    public bool NowIsLeft1 { get => NowIsLeft;}
+    public bool NowIsLeft { get => playingDirectionIsLeft;}
 
     private void Start()
     {
@@ -47,21 +50,21 @@ public class MusicController : MonoBehaviour
 
     private void detectSide()
     {
-        if (MPA.Speed > 0)
+        if (MPA.MovementDir == MovementDirection.Left)
         {
-            isLeft = true;
+            isSwipingAndTouchingLeft = true;
         }
-        if (MPA.Speed < 0)
+        else
         {
-            isLeft = false;
+            isSwipingAndTouchingLeft = false;
         }
     }
 
     private void PlayingClip()
     {
-        if(isLeft == NowIsLeft)
+        if(isSwipingAndTouchingLeft == playingDirectionIsLeft)
         {
-            if (checkerCode.CheckMusic((moments[ActualClip].DistanceN / moments[ActualClip].FinishTime), MPA.Speed, aS.time, moments[ActualClip].FinishTime) || CorrectTiming())
+            if (checkerCode.CheckMusic((moments[actualClip].DistanceN / moments[actualClip].FinishTime), MPA.Speed, aS.time, moments[actualClip].FinishTime) || CorrectTiming())
             {
                 if (TryPLayMusic)
                 {
@@ -70,23 +73,22 @@ public class MusicController : MonoBehaviour
                 }
                 if(CorrectTiming() && checkerCode.IsGoodTiming)
                 {
+                    Debug.LogWarning("Success?");
                     checkerCode.ResetCheckOutClip();
-                    ActualClip++;
+
+                    actualClip++;
+                    checkerCode.onSuccesfullyPlayedNote.Invoke();
+
                     ChangeDirection();
-                }
-            }
-            if (checkerCode.CheckMusic((moments[ActualClip].DistanceN / moments[ActualClip].FinishTime), (MPA.Speed * -1), aS.time, moments[ActualClip].FinishTime) || CorrectTiming())
-            {
-                if (TryPLayMusic)
-                {
-                    aS.Play();
-                    TryPLayMusic = false;
-                }
-                if (CorrectTiming() && checkerCode.IsGoodTiming)
-                {
-                    checkerCode.ResetCheckOutClip();
-                    ActualClip++;
-                    ChangeDirection();
+
+                    if (actualClip == targetClip)
+                    {
+                        RememberANote();
+                        checkerCode.onSecuenceSuccesfullyPlayed.Invoke();
+                        canUse = false;
+
+                        GetComponentInParent<ActivateViolín>().DesactivateViolinInGame();
+                    }
                 }
             }
             else
@@ -95,9 +97,11 @@ public class MusicController : MonoBehaviour
                 checkerCode.ResetCheckOutClip();
                 aS.Stop();
 
+                actualClip = 0;
+                playingDirectionIsLeft = true;
+
                 TryPLayMusic = true;
             }
-
         }
     }
 
@@ -115,6 +119,7 @@ public class MusicController : MonoBehaviour
     public void NowCanUseViolin()
     {
         canUse = true;
+        print("?");
     }
     public void NowCantUseViolin()
     {
@@ -141,35 +146,40 @@ public class MusicController : MonoBehaviour
     public void ChangeDirection()
     {
         bool momentaryA = true;
-        if (NowIsLeft && momentaryA)
+        if (playingDirectionIsLeft && momentaryA)
         {
-            NowIsLeft = false;
+            playingDirectionIsLeft = false;
             momentaryA = false;
         }
-        if (!NowIsLeft && momentaryA)
+        if (!playingDirectionIsLeft && momentaryA)
         {
-            NowIsLeft = true;
+            playingDirectionIsLeft = true;
             momentaryA = false;
         }
     }
 
     public void RememberANote()
     {
-        if (rememberedNotes[0])
-        {
-            rememberedNotes[1] = true;
-            return;
-        }
-        if (rememberedNotes[1])
-        {
-            rememberedNotes[2] = true;
-            return;
-        }
         if (rememberedNotes[2])
         {
             rememberedNotes[3] = true;
+            targetClip = 4;
             return;
         }
+
+        if (rememberedNotes[1])
+        {
+            rememberedNotes[2] = true;
+            targetClip = 3;
+            return;
+        }
+
+        if (rememberedNotes[0])
+        {
+            rememberedNotes[1] = true;
+            targetClip = 2;
+            return;
+        }      
     }
 
     public void ForgetAllNote()
@@ -188,4 +198,28 @@ public class MusicController : MonoBehaviour
         rememberedNotes[3] = true;
     }
 
+    public void ResetPlayingSequence()
+    {
+        actualClip = 0;
+        playingDirectionIsLeft = true;
+    }
+    
+    #region"Activacion y desactivacion del violin"
+
+    public void EnableLogic()
+    {
+        isPlaying = true;
+        isSwipingAndTouchingLeft = false;
+        playingDirectionIsLeft = true;
+        actualClip = 0;
+    }
+
+    public void DisableLogic()
+    {
+        isPlaying = false;
+        isSwipingAndTouchingLeft = false;
+        playingDirectionIsLeft = false;
+        actualClip = 0;
+    }
+    #endregion
 }
