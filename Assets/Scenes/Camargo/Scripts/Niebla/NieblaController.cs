@@ -19,7 +19,7 @@ public class NieblaController : MonoBehaviour
 
     private void Update()
     {
-        if (AlphaNieblaActivate && AlphaNiebla < 0.6)
+        if (AlphaNieblaActivate && AlphaNiebla < 1)
         {
             AlphaNiebla += Time.deltaTime;
             Niebla2Shader.SetFloat("_alpha", AlphaNiebla);
