@@ -7,38 +7,56 @@ using UnityEngine.Events;
 public class ActivateViolín : MonoBehaviour
 {
     [SerializeField] MusicController MusicController;
-    [SerializeField] GameObject violin;
-    bool isActivate = false;
-    bool a =true;
+    [SerializeField] GameObject violinObject;
+    bool isViolinActive = false;
 
     [SerializeField] UnityEvent OnActivate;
     [SerializeField] UnityEvent OnDesactivate;
 
+    [Header("- TESTING -")]
+    [SerializeField] bool debugMode = false;
+
+    // Referencia al componentes del violin
+
     private void Start()
     {
-        violin.SetActive(false);
+        violinObject.SetActive(false);
     }
 
     private void Update()
     {
         //desde acá se puede activar o desactivar el viólin en pantalla
-        if (MusicController.CanUse)
+
+        if (debugMode)
         {
             if (Input.GetKeyDown(KeyCode.Q))
             {
-                if (!isActivate && a)
+                if (!isViolinActive)
                 {
                     ActivateViolinInGame();
                 }
-                if (isActivate && a)
+                else
                 {
                     DesactivateViolinInGame();
+                   
                 }
             }
-
-            if (!a)
+        }
+        else
+        {
+            if (MusicController.CanUse)
             {
-                a = true;
+                if (Input.GetKeyDown(KeyCode.Q))
+                {
+                    if (!isViolinActive)
+                    {
+                        ActivateViolinInGame();
+                    }
+                    else
+                    {
+                        DesactivateViolinInGame();
+                    }
+                }
             }
         }
     }
@@ -46,16 +64,22 @@ public class ActivateViolín : MonoBehaviour
     public void ActivateViolinInGame()
     {
         OnActivate.Invoke();
-        violin.SetActive(true);
-        isActivate = true;
-        a = false;
+        violinObject.SetActive(true);
+        isViolinActive = true;
+
+        // Inicialización lógica del violin
+        violinObject.GetComponentInChildren<MusicController>().EnableLogic();
+        violinObject.GetComponentInChildren<Checking>().AppearUIViolin();
     }
 
     public void DesactivateViolinInGame()
     {
         OnDesactivate.Invoke();
-        violin.SetActive(false);
-        isActivate = false;
-        a = false;
+        violinObject.SetActive(false);
+        isViolinActive = false;
+
+        // Terminación lógica del violin
+        violinObject.GetComponentInChildren<MusicController>().DisableLogic();
+        violinObject.GetComponentInChildren<Checking>().DisappearUIViolin();
     }
 }
