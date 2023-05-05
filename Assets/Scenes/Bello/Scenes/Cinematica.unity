@@ -157,7 +157,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -89.2, y: 0}
+  m_AnchoredPosition: {x: -222, y: 118}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &65984362
@@ -193,9 +193,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "Una vida sin memorias no ser\xEDa vida...\r\nNuestras memoria es nuestra\r\ncoherencia,
-    nuestra raz\xF3n, byestra acci\xF3n, nuestro sentimiento\r\nSin ella, no somos
-    nada.\r\n-Luis Bu\xF1uel"
+  m_Text: "Una vida sin memorias no ser\xEDa vida...\r\nNuestra memoria es nuestra\r
+    coherencia, nuestra raz\xF3n, \nnuestra acci\xF3n, nuestro sentimiento\r\nSin
+    ella, no somos nada.\r\n-Luis Bu\xF1uel-"
 --- !u!222 &65984363
 CanvasRenderer:
   m_ObjectHideFlags: 0

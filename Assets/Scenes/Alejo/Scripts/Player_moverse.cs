@@ -10,6 +10,8 @@ public class Player_moverse : MonoBehaviour
 
     public float movementSpeed;
     public float movimientonormal;
+    
+
 
     private bool canPlayviolin = false;
     public bool isPlaying = false;
@@ -18,7 +20,9 @@ public class Player_moverse : MonoBehaviour
     float verticalInput;
     //Add by Alejo:
     [Header("Bobbing Walking"), SerializeField] Animator walkingAnim; //Para las animaciones de caminar
-    AudioSource _audioSource; // Audio pasos
+    [SerializeField] AudioSource _audioSource; // Audio pasos
+    [SerializeField] AudioSource _audioSource1; // Audio pasos
+    public float timeBetweenSteps;
     private ushort controlPlayAudio = 0;
     [SerializeField] private float timeToPlayAudio = 1.5f;
     [SerializeField] private ControlInputs inputState;
@@ -143,10 +147,12 @@ public class Player_moverse : MonoBehaviour
 
         if (horizontalInput != 0 || verticalInput != 0)
         {
+            
             walkingAnim.SetBool("isMoving", true);
             if (controlPlayAudio == 0)
             {
                 _audioSource.Play();
+                StartCoroutine(coroutineA());
                 controlPlayAudio++;
             }
         }
@@ -154,7 +160,16 @@ public class Player_moverse : MonoBehaviour
         {
             walkingAnim.SetBool("isMoving", false);
             _audioSource.Pause();
+            StopCoroutine(coroutineA());
+            _audioSource1.Pause();
             controlPlayAudio = 0;
         }
+        IEnumerator coroutineA()
+        {
+            // wait for 1 second
+            yield return new WaitForSeconds(timeBetweenSteps);
+            _audioSource1.Play();
+        }
+
     }
 }
