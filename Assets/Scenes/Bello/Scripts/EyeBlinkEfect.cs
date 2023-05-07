@@ -21,6 +21,8 @@ public class EyeBlinkEfect : MonoBehaviour
     public UnityEvent blinking;
     public UnityEvent noBlinking;
     public UnityEvent finishanim1;
+    public UnityEvent finishanim2;
+    public UnityEvent finishanim3;
     [SerializeField]
     private VideoPlayer videoPlayer;
     //private VideoPlayer[] videoPlayerList = new VideoPlayer[4];
@@ -120,6 +122,7 @@ public class EyeBlinkEfect : MonoBehaviour
         videoPlayer2.Stop();
         isPlaying = false;
         finishanim1.Invoke();
+        finishanim2.Invoke();
     }
     //Animacion 3
     public void Anim3()
