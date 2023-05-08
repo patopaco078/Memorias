@@ -21,12 +21,7 @@ public class DoorController : MonoBehaviour
         myTriggerCollider = GetComponent<Collider>();
         myTriggerCollider.enabled = false;
     }
-
-    private void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.P)) BlockDoor();
-    }
-
+    
     public void UnlockDoor()
     //Se desactiva el collider de la puerta para evitar bugs en las físicas
     //Se Activa el trigger el del doorController para que detecte al jugador y abra o cierre la puerta

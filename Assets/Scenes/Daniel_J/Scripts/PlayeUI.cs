@@ -9,10 +9,7 @@ public class PlayeUI : MonoBehaviour
     private TextMeshProUGUI promptText;
 
     // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+  
     public void UpdateText(string promptMesaage)
     {
         promptText.text = promptMesaage;
