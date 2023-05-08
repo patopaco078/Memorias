@@ -11,12 +11,7 @@ public class Cajon : Interactable  //Daniel Jaramillo Script de la interaccion p
     {
         anim= GetComponent<Animator>();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 
     protected override void Interact()
     {

@@ -7,11 +7,13 @@ using UnityEngine;
 public class KeyDoor : MonoBehaviour
 {
     //NOTA: Este Script representa el evento o condición que desbloquea la puerta
-    [SerializeField] private DoorController doorController;
+    //[SerializeField] private DoorController doorController;
+    [SerializeField] private OpenDoorWithKeyBoard _openDoorWithKeyBoard;
     private void OnTriggerEnter(Collider other)
     {
         if(!other.CompareTag("Player")) return;
-        doorController.UnlockDoor(); //El evento o condición debe llamar a este método.
+        ///doorController.UnlockDoor(); //El evento o condición debe llamar a este método.
+        _openDoorWithKeyBoard.UnlockDoor();
         Destroy(gameObject);
     }
 }
