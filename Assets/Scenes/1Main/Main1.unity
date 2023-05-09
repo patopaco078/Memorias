@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18367748, g: 0.22913142, b: 0.3050283, a: 1}
+  m_IndirectSpecularColor: {r: 0.18367791, g: 0.22913219, b: 0.30502895, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1340,7 +1340,7 @@ PrefabInstance:
     - target: {fileID: 3028486319042543984, guid: e0264d5c90bc6f14e8d0f78b65ba92c4, type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 74bb0bce191599248aab3e49a3e24652, type: 3}
+      objectReference: {fileID: 8300000, guid: 5499fd8112d890f4e9d4dbdb32db0936, type: 3}
     - target: {fileID: 3028486319042543984, guid: e0264d5c90bc6f14e8d0f78b65ba92c4, type: 3}
       propertyPath: OutputAudioMixerGroup
       value: 
@@ -11741,7 +11741,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1052462839
 Transform:
   m_ObjectHideFlags: 0
