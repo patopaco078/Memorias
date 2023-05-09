@@ -17,7 +17,6 @@ public class DesaparecerNotas : Interactable
     public float initialDistance = 1;
    
     private BoxCollider box;
-    private bool isRotating = false;
     private float originalPositionY;
     private int count = 1;
 
@@ -33,19 +32,7 @@ public class DesaparecerNotas : Interactable
 
     // Update is called once per frame
     void Update()
-    {
-
-        if (Input.GetMouseButtonDown(0)) // 0 indica el clic izquierdo del mouse
-        {
-            isRotating = true;
-        }
-
-        if (Input.GetMouseButtonUp(0)) // el clic se levanto
-        {
-            isRotating = false;
-        }
-
-
+    {      
         if (isInspecting)
         {
             PlayerLook.Instance.CantMoveCamera();
@@ -66,22 +53,9 @@ public class DesaparecerNotas : Interactable
                 count--;
 
             }
-            ;
-            // Rotate
-
-            if (isRotating) // Si se ha hecho clic en el botón del mouse
-            {
-                float rotateHorizontal = Input.GetAxis("Mouse X") * rotationSpeed;
-                float rotateVertical = Input.GetAxis("Mouse Y") * rotationSpeed;
-
-                transform.Rotate(Vector3.up, -rotateHorizontal, Space.World);
-                transform.Rotate(Vector3.right, rotateVertical, Space.World);
-            }
-            box.enabled = false;
-
+                                
             if (Input.GetKeyDown(KeyCode.E))
             {
-
                 isInspecting = false;
                 transform.position = originalPosition;
                 transform.rotation = originalRotation;

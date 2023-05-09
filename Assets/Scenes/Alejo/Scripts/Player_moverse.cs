@@ -21,10 +21,7 @@ public class Player_moverse : MonoBehaviour
     //Add by Alejo:
     [Header("Bobbing Walking"), SerializeField] Animator walkingAnim; //Para las animaciones de caminar
     [SerializeField] AudioSource _audioSource; // Audio pasos
-    [SerializeField] AudioSource _audioSource1; // Audio pasos
-    public float timeBetweenSteps;
     private ushort controlPlayAudio = 0;
-    [SerializeField] private float timeToPlayAudio = 1.5f;
     [SerializeField] private ControlInputs inputState;
 
     float gravity = -10;  
@@ -152,7 +149,6 @@ public class Player_moverse : MonoBehaviour
             if (controlPlayAudio == 0)
             {
                 _audioSource.Play();
-                StartCoroutine(coroutineA());
                 controlPlayAudio++;
             }
         }
@@ -160,16 +156,9 @@ public class Player_moverse : MonoBehaviour
         {
             walkingAnim.SetBool("isMoving", false);
             _audioSource.Pause();
-            StopCoroutine(coroutineA());
-            _audioSource1.Pause();
             controlPlayAudio = 0;
         }
-        IEnumerator coroutineA()
-        {
-            // wait for 1 second
-            yield return new WaitForSeconds(timeBetweenSteps);
-            _audioSource1.Play();
-        }
+       
 
     }
 }
