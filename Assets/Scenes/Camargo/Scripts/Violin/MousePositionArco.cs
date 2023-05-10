@@ -36,6 +36,10 @@ public class MousePositionArco : MonoBehaviour
 
     bool flag_CheckedViolinStopPlayed = false;
 
+    int previousViolinNote = 0;
+
+    [SerializeField] MusicNotesHandler musicHandler;
+
     private void Start()
     {
         checkingCode = transform.parent.GetComponentInChildren<Checking>();
@@ -64,25 +68,41 @@ public class MousePositionArco : MonoBehaviour
 
         // Verificar en que momento terminamos de tocar el violin de forma erronea
 
-        if (!isTouchViolin)
+
+        if (!isTouchViolin && !flag_CheckedViolinStopPlayed)
         {
-            if (flag_CheckedViolinStopPlayed)
-            {
-                return;
-            }
+            flag_CheckedViolinStopPlayed = true;
 
 
             if (!checkingCode.IsPlayingCorrectly)
             {
-                musicController.ResetPlayingSequence();
-            }
+                musicHandler.PlayBadNote();
 
-            flag_CheckedViolinStopPlayed = true;
+                musicHandler.StopNote(0);
+                musicHandler.StopNote(1);
+                musicHandler.StopNote(2);
+                musicHandler.StopNote(3);
+
+                musicController.ResetPlayingSequence();
+
+            }
+            else if (!checkingCode.IsGoodTiming ||checkingCode.IsPlayingCorrectly) 
+            {
+                musicHandler.StopNote(0);
+                musicHandler.StopNote(1);
+                musicHandler.StopNote(2);
+                musicHandler.StopNote(3);
+            }         
         }
         else if (isTouchViolin && flag_CheckedViolinStopPlayed)
         {
             flag_CheckedViolinStopPlayed = false;
+
+
+            musicHandler.PlayNote(musicController.actualClip);
         }
+
+        previousViolinNote = musicController.actualClip;
     }
 
     //funcion necesaria para que el programa no arroje falsos positivos
