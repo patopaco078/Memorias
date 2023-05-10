@@ -33,7 +33,7 @@ public class EyeBlinkEfect : MonoBehaviour
     {
         anim = Blink.GetComponent<Animator>();
     }
-     void update()
+     void Update()
     {
         if (Input.GetKeyDown(KeyCode.P) && isPlaying)
         {
