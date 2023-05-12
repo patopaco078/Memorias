@@ -1392,6 +1392,17 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 3028486319042543985, guid: e0264d5c90bc6f14e8d0f78b65ba92c4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e0264d5c90bc6f14e8d0f78b65ba92c4, type: 3}
+--- !u!114 &211600133 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3028486318124514806, guid: e0264d5c90bc6f14e8d0f78b65ba92c4, type: 3}
+  m_PrefabInstance: {fileID: 211600132}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0110cc883af2b53419f17f1f90a836f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &250519087
 GameObject:
   m_ObjectHideFlags: 0
@@ -13207,7 +13218,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5223542749620622953, guid: cfe1652a98a09fe44bc4627563ac83aa, type: 3}
       propertyPath: activarObjetivo.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5223542749620622953, guid: cfe1652a98a09fe44bc4627563ac83aa, type: 3}
       propertyPath: activarObjetivo.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -13218,6 +13229,10 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5223542749620622953, guid: cfe1652a98a09fe44bc4627563ac83aa, type: 3}
+      propertyPath: activarObjetivo.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5223542749620622953, guid: cfe1652a98a09fe44bc4627563ac83aa, type: 3}
       propertyPath: activarObjetivo.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1295507642}
@@ -13226,11 +13241,19 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 584183047}
     - target: {fileID: 5223542749620622953, guid: cfe1652a98a09fe44bc4627563ac83aa, type: 3}
+      propertyPath: activarObjetivo.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 211600133}
+    - target: {fileID: 5223542749620622953, guid: cfe1652a98a09fe44bc4627563ac83aa, type: 3}
       propertyPath: activarObjetivo.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5223542749620622953, guid: cfe1652a98a09fe44bc4627563ac83aa, type: 3}
       propertyPath: activarObjetivo.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5223542749620622953, guid: cfe1652a98a09fe44bc4627563ac83aa, type: 3}
+      propertyPath: activarObjetivo.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5223542749620622953, guid: cfe1652a98a09fe44bc4627563ac83aa, type: 3}
@@ -13242,6 +13265,10 @@ PrefabInstance:
       value: set_enabled
       objectReference: {fileID: 0}
     - target: {fileID: 5223542749620622953, guid: cfe1652a98a09fe44bc4627563ac83aa, type: 3}
+      propertyPath: activarObjetivo.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: InvertMovement
+      objectReference: {fileID: 0}
+    - target: {fileID: 5223542749620622953, guid: cfe1652a98a09fe44bc4627563ac83aa, type: 3}
       propertyPath: activarObjetivo.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: EyeBlinkEfect, Assembly-CSharp
       objectReference: {fileID: 0}
@@ -13250,11 +13277,19 @@ PrefabInstance:
       value: UnityEngine.Collider, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5223542749620622953, guid: cfe1652a98a09fe44bc4627563ac83aa, type: 3}
+      propertyPath: activarObjetivo.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: ControlInputs, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5223542749620622953, guid: cfe1652a98a09fe44bc4627563ac83aa, type: 3}
       propertyPath: activarObjetivo.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5223542749620622953, guid: cfe1652a98a09fe44bc4627563ac83aa, type: 3}
       propertyPath: activarObjetivo.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5223542749620622953, guid: cfe1652a98a09fe44bc4627563ac83aa, type: 3}
+      propertyPath: activarObjetivo.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5223542749620622954, guid: cfe1652a98a09fe44bc4627563ac83aa, type: 3}
@@ -14525,7 +14560,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1601698008
 Transform:
   m_ObjectHideFlags: 0
