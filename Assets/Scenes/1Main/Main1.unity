@@ -1465,7 +1465,7 @@ PrefabInstance:
       objectReference: {fileID: -6055152577972694271, guid: 6e14eab161bd3554f85e9774e42183f4, type: 2}
     - target: {fileID: 3028486319042543984, guid: e0264d5c90bc6f14e8d0f78b65ba92c4, type: 3}
       propertyPath: Pan2D
-      value: -1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3028486319042543984, guid: e0264d5c90bc6f14e8d0f78b65ba92c4, type: 3}
       propertyPath: m_Volume
@@ -1474,7 +1474,7 @@ PrefabInstance:
     - target: {fileID: 3028486319042543984, guid: e0264d5c90bc6f14e8d0f78b65ba92c4, type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 5499fd8112d890f4e9d4dbdb32db0936, type: 3}
+      objectReference: {fileID: 8300000, guid: a02a06ffb22c53746903f0b087f99958, type: 3}
     - target: {fileID: 3028486319042543984, guid: e0264d5c90bc6f14e8d0f78b65ba92c4, type: 3}
       propertyPath: OutputAudioMixerGroup
       value: 
@@ -9988,7 +9988,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5668653040046223905, guid: 296fcd13816fb1c44bfa91c973e10bfd, type: 3}
       propertyPath: m_Size.x
-      value: 9.159279
+      value: 7.947942
       objectReference: {fileID: 0}
     - target: {fileID: 5668653040046223905, guid: 296fcd13816fb1c44bfa91c973e10bfd, type: 3}
       propertyPath: m_Size.y
@@ -9996,11 +9996,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5668653040046223905, guid: 296fcd13816fb1c44bfa91c973e10bfd, type: 3}
       propertyPath: m_Size.z
-      value: 3.4654639
+      value: 2.5718973
       objectReference: {fileID: 0}
     - target: {fileID: 5668653040046223905, guid: 296fcd13816fb1c44bfa91c973e10bfd, type: 3}
       propertyPath: m_Center.x
-      value: 6.271014
+      value: 6.036551
       objectReference: {fileID: 0}
     - target: {fileID: 5668653040046223905, guid: 296fcd13816fb1c44bfa91c973e10bfd, type: 3}
       propertyPath: m_Center.y
@@ -10008,7 +10008,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5668653040046223905, guid: 296fcd13816fb1c44bfa91c973e10bfd, type: 3}
       propertyPath: m_Center.z
-      value: -3.2112436
+      value: -3.658027
       objectReference: {fileID: 0}
     - target: {fileID: 5668653040046223906, guid: 296fcd13816fb1c44bfa91c973e10bfd, type: 3}
       propertyPath: m_OtherTexture.Array.size
@@ -10017,7 +10017,7 @@ PrefabInstance:
     - target: {fileID: 5668653040046223906, guid: 296fcd13816fb1c44bfa91c973e10bfd, type: 3}
       propertyPath: m_OtherTexture.Array.data[0]
       value: 
-      objectReference: {fileID: 2800000, guid: 91b6e16234113ef458e772440b2361ba, type: 3}
+      objectReference: {fileID: 2800000, guid: 318b92605aab65640b7a746be9248865, type: 3}
     - target: {fileID: 5668653040046223906, guid: 296fcd13816fb1c44bfa91c973e10bfd, type: 3}
       propertyPath: m_OtherTexture.Array.data[1]
       value: 
@@ -14046,8 +14046,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.8736467, y: 2.2571554, z: 2.463654}
-  m_Center: {x: 1.848042, y: 0.31761092, z: -3.7121484}
+  m_Size: {x: 2.4858303, y: 2.2571554, z: 2.3479533}
+  m_Center: {x: 2.0419502, y: 0.31761098, z: -3.7699988}
 --- !u!114 &1492601966
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14061,7 +14061,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_OtherTexture:
-  - {fileID: 2800000, guid: cb48094338e8d7e43869191310e5a431, type: 3}
+  - {fileID: 2800000, guid: ec8eee1410e1a1e4ab62212a43765560, type: 3}
 --- !u!1 &1501733286
 GameObject:
   m_ObjectHideFlags: 0
@@ -14706,7 +14706,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1619224850}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.006, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2115701604}
@@ -16058,7 +16058,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 64f9cf415d97ba24398da21f9252abdc, type: 2}
+  - {fileID: 2100000, guid: 79da42372693a764094c3294f3c8b05f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -17601,7 +17601,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_OtherTexture:
   - {fileID: 2800000, guid: 5ce232a80ed4f0442b87136004fddd12, type: 3}
-  - {fileID: 2800000, guid: 457a7b71c90534643826a42da9079ce2, type: 3}
+  - {fileID: 2800000, guid: 91b6e16234113ef458e772440b2361ba, type: 3}
   - {fileID: 2800000, guid: 318b92605aab65640b7a746be9248865, type: 3}
 --- !u!1 &25351802626190729
 GameObject:
