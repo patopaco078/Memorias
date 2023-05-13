@@ -14726,7 +14726,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   doorAnimator: {fileID: 159490698}
   doorCollider: {fileID: 1374921484}
-  openDoorInstructions: {fileID: 0}
+  openDoorInstructions: {fileID: 2002002901}
 --- !u!65 &1619224853
 BoxCollider:
   m_ObjectHideFlags: 0
