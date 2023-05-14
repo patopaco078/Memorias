@@ -192,6 +192,19 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 236339936884262803, guid: a9c72705bbac20a488c57023a4e30b35, type: 3}
   m_PrefabInstance: {fileID: 1044285394}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &20553110
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 20553108}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0069333455, y: 0.025553495, z: 0.035518896}
+  m_Center: {x: -0.07394984, y: 0.047768347, z: 0.018231504}
 --- !u!95 &20553111
 Animator:
   serializedVersion: 5
@@ -224,9 +237,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beae1fb1697d6b345894ff7e435fe1e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  promptMessage: Presiona E para abrir la puerta
   otherDoorObject: {fileID: 994742292}
   audioDoor: {fileID: 1804934714}
   NC: {fileID: 1048152228}
+  doorCollider: {fileID: 20553110}
 --- !u!1 &25136851
 GameObject:
   m_ObjectHideFlags: 0
@@ -11951,6 +11966,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -0.009999983
       objectReference: {fileID: 0}
+    - target: {fileID: 4669450563854452230, guid: a9c72705bbac20a488c57023a4e30b35, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6350211962593968958, guid: a9c72705bbac20a488c57023a4e30b35, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
@@ -16199,7 +16218,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1804934713}
   - component: {fileID: 1804934714}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: audio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18035,7 +18054,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &2107290277
 BoxCollider:
   m_ObjectHideFlags: 0
