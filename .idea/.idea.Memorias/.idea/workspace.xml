@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3b3a568c-cb02-4475-b26c-77aa08bafad9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Memorias/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Memorias/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Scripts Animations Events/DoorVagon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Scripts Animations Events/DoorVagon.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/1Main/Main1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/1Main/Main1.unity" afterDir="false" />
-    </list>
+    <list default="true" id="3b3a568c-cb02-4475-b26c-77aa08bafad9" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -88,7 +84,7 @@
       <workItem from="1679024352412" duration="582000" />
       <workItem from="1679025208965" duration="2792000" />
       <workItem from="1683780469685" duration="781000" />
-      <workItem from="1684044656182" duration="3520000" />
+      <workItem from="1684044656182" duration="4216000" />
     </task>
     <servers />
   </component>
