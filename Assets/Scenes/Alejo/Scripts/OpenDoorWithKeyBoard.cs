@@ -10,15 +10,16 @@ public class OpenDoorWithKeyBoard : MonoBehaviour
         de la puerta */
         [Header("Door Animator"),SerializeField] private Animator doorAnimator;
         [Header("Door Collider"), SerializeField] private Collider doorCollider;
+        [SerializeField] private GameObject openDoorInstructions;
         private AudioSource m_audioSouerce;
-        private Collider myTriggerCollider; /*El collider del doorSystem es desactivado en el Awake para evitar que 
-        detecte al jugador y abrá la puerta */
-    
+        private Collider myTriggerCollider; /*El collider del doorSystem es desactivado en el Awake para evitar que detecte al jugador y abrá la puerta */
+        private bool playerReadIntrucctions = false;
         private void Awake()
         {
             m_audioSouerce = GetComponent<AudioSource>();
             myTriggerCollider = GetComponent<Collider>();
             myTriggerCollider.enabled = false;
+            openDoorInstructions.SetActive(false);
         }
         
         public void UnlockDoor()
@@ -30,13 +31,21 @@ public class OpenDoorWithKeyBoard : MonoBehaviour
         }
         private void OnTriggerStay(Collider other)
         {
-            if(other.CompareTag("Player") && Input.GetKeyDown(KeyCode.E)) OpenDoor();
+            if (!other.CompareTag("Player")) return;
+            if (!playerReadIntrucctions) openDoorInstructions.SetActive(true);
+            if(Input.GetKeyDown(KeyCode.E))
+            {
+                OpenDoor(); 
+                openDoorInstructions.SetActive(false);
+                playerReadIntrucctions = true;
+            }
         }
     
         private void OnTriggerExit(Collider other)
         {
             if (!other.CompareTag("Player")) return;
             CloseDoor();
+            playerReadIntrucctions = false;
         }
     
         public void OpenDoor()
