@@ -45,6 +45,7 @@ public class OpenDoorWithKeyBoard : MonoBehaviour
         {
             if (!other.CompareTag("Player")) return;
             CloseDoor();
+            openDoorInstructions.SetActive(false);
             playerReadIntrucctions = false;
         }
     
