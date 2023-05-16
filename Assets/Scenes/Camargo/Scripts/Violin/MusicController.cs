@@ -12,7 +12,7 @@ public class MusicController : MonoBehaviour
     [SerializeField] MousePositionArco MPA;
     [SerializeField] ClipMusic[] moments;
 
-    int actualClip = 0;
+    public int actualClip = 0;
     int targetClip = 1;
 
     private AudioSource aS;
@@ -68,7 +68,7 @@ public class MusicController : MonoBehaviour
             {
                 if (TryPLayMusic)
                 {
-                    aS.Play();
+                    //aS.Play();
                     TryPLayMusic = false;
                 }
                 if(CorrectTiming() && checkerCode.IsGoodTiming)
