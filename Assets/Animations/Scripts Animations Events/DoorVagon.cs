@@ -2,17 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DoorVagon : MonoBehaviour
+public class DoorVagon : Interactable
 {
     private Animator anim;
     [SerializeField] Animator otherDoorObject;
     [SerializeField] AudioSource audioDoor;
     [SerializeField] NieblaController NC;
 
+    [SerializeField] private BoxCollider doorCollider;
+
     private void Start()
     {
         anim = GetComponent<Animator>();
     }
+    
+    
 
     public void StartOpenDoor()
     {
@@ -24,5 +28,11 @@ public class DoorVagon : MonoBehaviour
     public void ActiveDarkNiebla()
     {
         NC.ActivateNiebla();
+    }
+
+    protected override void Interact()
+    {
+        StartOpenDoor();
+        doorCollider.enabled = false;
     }
 }
