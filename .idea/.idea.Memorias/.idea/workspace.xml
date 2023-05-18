@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3b3a568c-cb02-4475-b26c-77aa08bafad9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Memorias/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Memorias/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Fungus.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Fungus.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/1Main/Main1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/1Main/Main1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Bello/Test_Materials/Font/Kurale-Regular SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Bello/Test_Materials/Font/Kurale-Regular SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Camargo/materials/Shaders/niebla2.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Camargo/materials/Shaders/niebla2.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Camargo/materials/Shaders/nieblaTren.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Camargo/materials/Shaders/nieblaTren.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,6 +94,7 @@
       <workItem from="1684203696159" duration="3000" />
       <workItem from="1684294950508" duration="7000" />
       <workItem from="1684387149134" duration="756000" />
+      <workItem from="1684396996452" duration="18000" />
     </task>
     <servers />
   </component>

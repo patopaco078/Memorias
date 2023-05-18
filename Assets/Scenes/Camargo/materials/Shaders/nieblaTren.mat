@@ -34,7 +34,7 @@ Material:
     m_Floats:
     - Vector1_97af94ea98f9465e80d9466958a548f5: 0.39
     - Vector1_b86a1c54c531406ebbfc0ba97957fe2f: 1.57
-    - _alpha: 1.0034177
+    - _alpha: 1.0031588
     m_Colors:
     - _BaseColor: {r: 0.1509434, g: 0.1509434, b: 0.1509434, a: 0}
     - _ShadowColor: {r: 0, g: 0, b: 0, a: 0}
