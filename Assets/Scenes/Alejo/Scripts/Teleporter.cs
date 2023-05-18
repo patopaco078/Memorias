@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 //By: Alejo López
 public class Teleporter : MonoBehaviour
 {

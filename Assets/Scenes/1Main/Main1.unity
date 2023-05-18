@@ -2218,7 +2218,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &273979798
 Transform:
   m_ObjectHideFlags: 0
@@ -2246,7 +2246,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 88768915}
-  pj: {fileID: 1076900987}
+  pj: {fileID: 293162094}
+  seTeletrasporta:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1295507642}
+        m_TargetAssemblyTypeName: EyeBlinkEfect, Assembly-CSharp
+        m_MethodName: Stoop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!65 &273979800
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2255,8 +2270,8 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 273979797}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
+  m_IsTrigger: 1
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 2.8094187, y: 1, z: 1}
   m_Center: {x: -0.4926839, y: 0, z: 0}
@@ -7253,6 +7268,11 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!1 &293162094 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3028486319042543997, guid: e0264d5c90bc6f14e8d0f78b65ba92c4, type: 3}
+  m_PrefabInstance: {fileID: 211600132}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &300217161
 GameObject:
   m_ObjectHideFlags: 0
@@ -13549,11 +13569,6 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!1 &1076900987 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3028486317972608104, guid: e0264d5c90bc6f14e8d0f78b65ba92c4, type: 3}
-  m_PrefabInstance: {fileID: 211600132}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1095783279
 GameObject:
   m_ObjectHideFlags: 0
@@ -15365,7 +15380,7 @@ PrefabInstance:
     - target: {fileID: 5223542749620622953, guid: cfe1652a98a09fe44bc4627563ac83aa, type: 3}
       propertyPath: activarObjetivo.m_PersistentCalls.m_Calls.Array.data[4].m_Target
       value: 
-      objectReference: {fileID: 273979800}
+      objectReference: {fileID: 273979797}
     - target: {fileID: 5223542749620622953, guid: cfe1652a98a09fe44bc4627563ac83aa, type: 3}
       propertyPath: activarObjetivo.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -15400,11 +15415,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5223542749620622953, guid: cfe1652a98a09fe44bc4627563ac83aa, type: 3}
       propertyPath: activarObjetivo.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
-      value: 
+      value: Stoop
       objectReference: {fileID: 0}
     - target: {fileID: 5223542749620622953, guid: cfe1652a98a09fe44bc4627563ac83aa, type: 3}
       propertyPath: activarObjetivo.m_PersistentCalls.m_Calls.Array.data[4].m_MethodName
-      value: set_enabled
+      value: SetActive
       objectReference: {fileID: 0}
     - target: {fileID: 5223542749620622953, guid: cfe1652a98a09fe44bc4627563ac83aa, type: 3}
       propertyPath: activarObjetivo.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -15424,7 +15439,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5223542749620622953, guid: cfe1652a98a09fe44bc4627563ac83aa, type: 3}
       propertyPath: activarObjetivo.m_PersistentCalls.m_Calls.Array.data[4].m_TargetAssemblyTypeName
-      value: UnityEngine.Collider, UnityEngine
+      value: UnityEngine.GameObject, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5223542749620622953, guid: cfe1652a98a09fe44bc4627563ac83aa, type: 3}
       propertyPath: activarObjetivo.m_PersistentCalls.m_Calls.Array.data[4].m_Arguments.m_BoolArgument
@@ -16096,7 +16111,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3028486317803152653, guid: e0264d5c90bc6f14e8d0f78b65ba92c4, type: 3}
   m_PrefabInstance: {fileID: 211600132}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 293162094}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: adc6de62e8c606b4e93620af517af3ae, type: 3}

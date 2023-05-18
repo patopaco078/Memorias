@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Teleport : MonoBehaviour
 {
@@ -8,11 +9,14 @@ public class Teleport : MonoBehaviour
     private Transform target;
     [SerializeField]
     private GameObject pj;
-    // Start is called before the first frame update
+    [SerializeField]
+    private UnityEvent seTeletrasporta;
    
 
     private void OnTriggerEnter(Collider other)
     {
+        seTeletrasporta.Invoke();
         pj.transform.position = target.transform.position;
+        
     }
 }
