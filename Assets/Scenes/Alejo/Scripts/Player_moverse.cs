@@ -161,5 +161,4 @@ public class Player_moverse : MonoBehaviour
        
 
     }
-    
 }
