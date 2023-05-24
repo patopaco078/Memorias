@@ -87,7 +87,7 @@ public class MusicController : MonoBehaviour
                         checkerCode.onSecuenceSuccesfullyPlayed.Invoke();
                         canUse = false;
 
-                        GetComponentInParent<ActivateViolín>().DesactivateViolinInGame();
+                        GetComponentInParent<ActivateViolÃ­n>().DesactivateViolinInGame();
                     }
                 }
             }

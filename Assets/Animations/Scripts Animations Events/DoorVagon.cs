@@ -2,12 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DoorVagon : Interactable
+public class DoorVagon : MonoBehaviour, IInteractable
 {
     private Animator anim;
     [SerializeField] Animator otherDoorObject;
     [SerializeField] AudioSource audioDoor;
-    [SerializeField] NieblaController NC;
 
     [SerializeField] private BoxCollider doorCollider;
 
@@ -15,24 +14,19 @@ public class DoorVagon : Interactable
     {
         anim = GetComponent<Animator>();
     }
-    
-    
-
     public void StartOpenDoor()
     {
         anim.SetTrigger("openDoor");
         otherDoorObject.SetTrigger("openDoor");
         audioDoor.Play();
     }
+    
 
-    public void ActiveDarkNiebla()
-    {
-        NC.ActivateNiebla();
-    }
-
-    protected override void Interact()
+    public void Interact()
     {
         StartOpenDoor();
         doorCollider.enabled = false;
+        PlayerMovementZambrano.instance.enabled = true;
+        CameraMovementZambrano.instance.ignoreMousePos = false;
     }
 }

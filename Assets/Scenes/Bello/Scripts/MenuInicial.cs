@@ -7,7 +7,7 @@ public class MenuInicial : MonoBehaviour
 {
     public void Playgame()
     {
-        SceneManager.LoadScene("Cinematica");
+        SceneManager.LoadScene("Intro Zambrano");
 
     }
     public void Exitgame()

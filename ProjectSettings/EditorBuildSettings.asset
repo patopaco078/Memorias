@@ -14,4 +14,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/1Main/Main1.unity
     guid: c67ec052ba30a594989e2202fdfe5462
+  - enabled: 1
+    path: Assets/Scenes/Main Zambrano/Intro Zambrano.unity
+    guid: d3c7109b0fb38f4438025794de962746
+  - enabled: 1
+    path: Assets/Scenes/Main Zambrano/Main Zambrano.unity
+    guid: db2288389231fa049acfd37ce64ba474
+  - enabled: 1
+    path: Assets/Scenes/Main Zambrano/Creditos.unity
+    guid: 6632ad9148e44be42a3e22ce35a621a2
   m_configObjects: {}

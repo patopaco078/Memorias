@@ -1,15 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3b3a568c-cb02-4475-b26c-77aa08bafad9" name="Changes" comment="" />
+    <list default="true" id="3b3a568c-cb02-4475-b26c-77aa08bafad9" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Memorias/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Memorias/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Open.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Open.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Open2.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Open2.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Scripts Animations Events/DoorVagon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Scripts Animations Events/DoorVagon.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fungus/Thirdparty/LeanTween.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fungus/Thirdparty/LeanTween.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fungus/Thirdparty/LeanTween/LTDescr.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fungus/Thirdparty/LeanTween/LTDescr.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fungus/Thirdparty/LeanTween/LTDescr.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fungus/Thirdparty/LeanTween/LTDescr.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fungus/Thirdparty/LeanTween/LTDescrOptional.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fungus/Thirdparty/LeanTween/LTDescrOptional.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fungus/Thirdparty/LeanTween/LTDescrOptional.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fungus/Thirdparty/LeanTween/LTDescrOptional.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fungus/Thirdparty/LeanTween/LTSeq.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fungus/Thirdparty/LeanTween/LTSeq.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fungus/Thirdparty/LeanTween/LTSeq.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fungus/Thirdparty/LeanTween/LTSeq.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fungus/Thirdparty/LeanTween/LeanAudio.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fungus/Thirdparty/LeanTween/LeanAudio.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fungus/Thirdparty/LeanTween/LeanAudio.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fungus/Thirdparty/LeanTween/LeanAudio.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fungus/Thirdparty/LeanTween/LeanTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fungus/Thirdparty/LeanTween/LeanTest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fungus/Thirdparty/LeanTween/LeanTest.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fungus/Thirdparty/LeanTween/LeanTest.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fungus/Thirdparty/LeanTween/LeanTween.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fungus/Thirdparty/LeanTween/LeanTween.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fungus/Thirdparty/LeanTween/LeanTween.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fungus/Thirdparty/LeanTween/LeanTween.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Fungus/Thirdparty/LeanTween/LeanTween.dll.zip.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fungus/Thirdparty/LeanTween/LeanTween.dll.zip.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Alejo/Materials/TestChangeTxtr.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Alejo/Materials/TestChangeTxtr.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Bello/Animations/Panel.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Bello/Animations/Panel.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Bello/Animations/blink.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Bello/Animations/blink.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Bello/Scripts/MenuInicial.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Bello/Scripts/MenuInicial.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Bello/Test_Materials/Font/Kurale-Regular SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Bello/Test_Materials/Font/Kurale-Regular SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Camargo/Scripts/Violin/MusicController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Camargo/Scripts/Violin/MusicController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Camargo/materials/Shaders/niebla2.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Camargo/materials/Shaders/niebla2.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Camargo/materials/Shaders/nieblaTren.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Camargo/materials/Shaders/nieblaTren.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Daniel_J/Scripts/Interactables/Cajon1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Daniel_J/Scripts/Interactables/Cajon1.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/URPProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/URPProjectSettings.asset" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scenes/Main Zambrano/Creditos.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scenes/Main Zambrano/Scripts/BlinkController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scenes/Main Zambrano/Scripts/CajonAnimatic.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scenes/Main Zambrano/Scripts/Cinematicas/IntroductionCinematic.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scenes/Main Zambrano/Scripts/EnableViolin.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scenes/Main Zambrano/Scripts/FrameTextController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scenes/Main Zambrano/Scripts/InteractableObjects/Ark.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scenes/Main Zambrano/Scripts/InteractableObjects/Clock.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scenes/Main Zambrano/Scripts/InteractableObjects/CloseDisplay.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scenes/Main Zambrano/Scripts/InteractableObjects/IInteractable.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scenes/Main Zambrano/Scripts/InteractableObjects/InteractableDisplayText.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scenes/Main Zambrano/Scripts/InteractableObjects/Metronome.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scenes/Main Zambrano/Scripts/InteractableObjects/Partitura.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scenes/Main Zambrano/Scripts/InteractableObjects/PartituraFinal.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scenes/Main Zambrano/Scripts/InteractableObjects/PostIts.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scenes/Main Zambrano/Scripts/InteractableObjects/PostItsDisplay.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scenes/Main Zambrano/Scripts/InteractableObjects/PuertaSala.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scenes/Main Zambrano/Scripts/InteractableObjects/Tocador.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scenes/Main Zambrano/Scripts/MemoriesController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scenes/Main Zambrano/Scripts/Player/CameraMovementZambrano.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scenes/Main Zambrano/Scripts/Player/FogController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scenes/Main Zambrano/Scripts/Player/PlayerInteractions.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scenes/Main Zambrano/Scripts/Player/PlayerMovementZambrano.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scenes/Main Zambrano/Scripts/Player/Violin/ArkMovementZambrano.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scenes/Main Zambrano/Scripts/Player/WakeUp.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scenes/Main Zambrano/Scripts/PrincipalFrame.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scenes/Main Zambrano/Scripts/ScoreDisplay.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../Petsctruction repository/TremmorPetLife/Assets/Scripts/Educational/EducationalLoadingBar.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../Petsctruction repository/TremmorPetLife/Assets/Scripts/Educational/EducationalScreenManager.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectId" id="2Lt6kktkNccpegbbnubtHQ4690z" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -85,12 +151,15 @@
       <workItem from="1679025208965" duration="2792000" />
       <workItem from="1683780469685" duration="781000" />
       <workItem from="1684044656182" duration="4216000" />
+      <workItem from="1684691447908" duration="36718000" />
+      <workItem from="1684860173073" duration="40911000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
   <component name="VcsManagerConfiguration">
