@@ -57,6 +57,9 @@ public class MemoriesController : MonoBehaviour
                 break;
             case 2:
                 reproductor.clip = memory3;
+                FogController.instance.AddFog();
+                FogController.instance.AddFog();
+                FogController.instance.AddFog();
                 break;
             case 3:
                 reproductor.clip = memory4;

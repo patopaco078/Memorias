@@ -3,38 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="3b3a568c-cb02-4475-b26c-77aa08bafad9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Memorias/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Memorias/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Open.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Open.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Open2.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Open2.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Scripts Animations Events/DoorVagon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Scripts Animations Events/DoorVagon.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Fungus/Thirdparty/LeanTween.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fungus/Thirdparty/LeanTween.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Fungus/Thirdparty/LeanTween/LTDescr.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fungus/Thirdparty/LeanTween/LTDescr.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Fungus/Thirdparty/LeanTween/LTDescr.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fungus/Thirdparty/LeanTween/LTDescr.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Fungus/Thirdparty/LeanTween/LTDescrOptional.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fungus/Thirdparty/LeanTween/LTDescrOptional.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Fungus/Thirdparty/LeanTween/LTDescrOptional.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fungus/Thirdparty/LeanTween/LTDescrOptional.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Fungus/Thirdparty/LeanTween/LTSeq.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fungus/Thirdparty/LeanTween/LTSeq.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Fungus/Thirdparty/LeanTween/LTSeq.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fungus/Thirdparty/LeanTween/LTSeq.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Fungus/Thirdparty/LeanTween/LeanAudio.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fungus/Thirdparty/LeanTween/LeanAudio.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Fungus/Thirdparty/LeanTween/LeanAudio.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fungus/Thirdparty/LeanTween/LeanAudio.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Fungus/Thirdparty/LeanTween/LeanTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fungus/Thirdparty/LeanTween/LeanTest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Fungus/Thirdparty/LeanTween/LeanTest.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fungus/Thirdparty/LeanTween/LeanTest.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Fungus/Thirdparty/LeanTween/LeanTween.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fungus/Thirdparty/LeanTween/LeanTween.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Fungus/Thirdparty/LeanTween/LeanTween.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fungus/Thirdparty/LeanTween/LeanTween.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Fungus/Thirdparty/LeanTween/LeanTween.dll.zip.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fungus/Thirdparty/LeanTween/LeanTween.dll.zip.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Alejo/Materials/TestChangeTxtr.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Alejo/Materials/TestChangeTxtr.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Bello/Animations/Panel.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Bello/Animations/Panel.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Bello/Animations/blink.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Bello/Animations/blink.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Bello/Scripts/MenuInicial.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Bello/Scripts/MenuInicial.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Bello/Test_Materials/Font/Kurale-Regular SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Bello/Test_Materials/Font/Kurale-Regular SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Camargo/Scripts/Violin/MusicController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Camargo/Scripts/Violin/MusicController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Camargo/materials/Shaders/niebla2.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Camargo/materials/Shaders/niebla2.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Camargo/materials/Shaders/nieblaTren.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Camargo/materials/Shaders/nieblaTren.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Daniel_J/Scripts/Interactables/Cajon1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Daniel_J/Scripts/Interactables/Cajon1.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/URPProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/URPProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main Zambrano/Main Zambrano.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main Zambrano/Main Zambrano.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main Zambrano/Scripts/MemoriesController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main Zambrano/Scripts/MemoriesController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main Zambrano/Scripts/PrincipalFrame.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main Zambrano/Scripts/PrincipalFrame.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,6 +70,14 @@
   }
 }</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="$USER_HOME$/Desktop/Memorias\quien soy.exe" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="C:\Users\sebas\Desktop\Memorias" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="H:\Motor\Editores\2020.3.44f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-projectPath C:\Users\1313n\Documents\GitHub\Memorias -debugCodeOptimization" />
@@ -152,7 +131,7 @@
       <workItem from="1683780469685" duration="781000" />
       <workItem from="1684044656182" duration="4216000" />
       <workItem from="1684691447908" duration="36718000" />
-      <workItem from="1684860173073" duration="40911000" />
+      <workItem from="1684860173073" duration="42440000" />
     </task>
     <servers />
   </component>

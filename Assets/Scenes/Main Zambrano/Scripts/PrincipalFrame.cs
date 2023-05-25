@@ -114,6 +114,9 @@ public class PrincipalFrame : MonoBehaviour, IInteractable
         yield return new WaitForSeconds(13f);
         BlinkController.Instance.Blink();
         MemoriesController.instance.PlayMemory(1);
+        FogController.instance.AddFog();
+        FogController.instance.AddFog();
+        FogController.instance.AddFog();
         Destroy(this);
     }
 
