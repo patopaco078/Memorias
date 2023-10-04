@@ -88,7 +88,7 @@ public class ArkMovementZambrano : MonoBehaviour
         
         if (porcentaje >= 6 && porcentaje <= 12)
         {
-            progress += 0.3f;
+            progress += 0.4f;
             Vector3 currentPos = Ark.transform.localPosition;
             currentPos.x = arkMovementMultiplier * 0.01f;
             anim.SetBool("Tocando", true);
